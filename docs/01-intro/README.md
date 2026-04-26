@@ -38,6 +38,8 @@ Cảm xúc ta "thấy" ở AI chỉ là **sự mô phỏng**, không phải cả
 - Bán hàng trực tiếp với khách
 - Cảm nhận thế giới, giác quan, trực giác
 
+👉 **[Mặt trái của AI — Góc nhìn tỉnh táo](../extra/mat-trai-ai/)** — hiểu rõ hơn tại sao AI không thể thay thế cảm xúc con người.
+
 ---
 
 ## Nguyên tắc phân tách

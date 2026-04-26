@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mặt trái của AI | Góc nhìn tỉnh táo về trí tuệ nhân tạo</title>
+  <meta name="description" content="Con người không hoàn hảo, AI cũng vậy. Bài viết đi sâu vào những mặt trái thường bị bỏ qua của AI: từ huyền thoại do truyền thông tạo dựng, nhóm lợi ích kinh tế đứng sau, bản chất chỉ là mô phỏng logic, đến hạn chế lớn nhất về cảm xúc và cảm nhận.">
+  <meta name="keywords" content="Mặt trái của AI, Hạn chế của AI, AI không phải là vạn năng, Sử dụng AI đúng cách, Hype AI, AI và cảm xúc con người, Lợi ích và rủi ro AI">
+  <meta property="og:title" content="Mặt trái của AI">
+  <meta property="og:description" content="Con người không hoàn hảo, AI cũng vậy. Góc nhìn tỉnh táo từ một người làm truyền thông kiêm tech.">
+  <meta property="og:type" content="article">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue-deep: #0A1628;
+      --blue-mid: #1A2A4A;
+      --blue-light: #2D4A7A;
+      --blue-accent: #4A90D9;
+      --blue-glow: #6BB3F0;
+      --gray-dark: #1E1E2E;
+      --gray-mid: #2A2A3E;
+      --gray-light: #3A3A5A;
+      --text-primary: #E8ECF4;
+      --text-secondary: #8A9AB5;
+      --text-muted: #5A6A85;
+      --warm-accent: #E8A87C;
+      --warm-red: #E85C5C;
+      --gradient-hero: linear-gradient(135deg, #0A1628 0%, #1A2A4A 40%, #0D2035 100%);
+      --gradient-card: linear-gradient(145deg, rgba(45,74,122,0.15), rgba(26,42,74,0.25));
+      --border: rgba(74,144,217,0.15);
+      --transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--blue-deep);
+      color: var(--text-primary);
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    /* ─── Utility ─── */
+    .container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+    .container.wide { max-width: 960px; }
+
+    /* ─── Navbar ─── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 16px 24px;
+      backdrop-filter: blur(20px);
+      background: rgba(10,22,40,0.8);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav .logo {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--blue-glow);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    nav .logo span { color: var(--warm-accent); }
+    nav .back-link {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    nav .back-link:hover { color: var(--blue-glow); }
+
+    /* ─── Hero ─── */
+    .hero {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: var(--gradient-hero);
+    }
+    .hero-glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(74,144,217,0.08) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: glowPulse 8s ease-in-out infinite;
+    }
+    @keyframes glowPulse {
+      0%, 100% { transform: translate(-50%,-50%) scale(1); opacity: 0.5; }
+      50% { transform: translate(-50%,-50%) scale(1.2); opacity: 1; }
+    }
+    .hero-diamonds {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .diamond {
+      position: absolute;
+      font-size: 20px;
+      opacity: 0.15;
+      animation: floatDiamond 10s ease-in-out infinite;
+    }
+    @keyframes floatDiamond {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-25px) rotate(15deg); }
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 18px;
+      border-radius: 50px;
+      border: 1px solid rgba(74,144,217,0.3);
+      background: rgba(74,144,217,0.06);
+      font-size: 0.8rem;
+      color: var(--blue-glow);
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-badge .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--blue-glow);
+      animation: pulse 2s ease infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+      letter-spacing: -1px;
+    }
+    .hero h1 .highlight {
+      background: linear-gradient(90deg, var(--blue-glow), var(--warm-accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero .excerpt {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 580px;
+      margin: 0 auto 36px;
+      line-height: 1.8;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-meta {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      position: relative;
+      z-index: 1;
+    }
+    .hero-meta span { display: flex; align-items: center; gap: 6px; }
+    .hero-divider {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue-accent), var(--warm-accent));
+      border-radius: 2px;
+      margin: 30px auto 0;
+    }
+
+    /* ─── Article Body ─── */
+    article {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 24px 100px;
+    }
+    .article-meta-top {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .tag {
+      padding: 4px 14px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: rgba(74,144,217,0.1);
+      color: var(--blue-glow);
+      border: 1px solid rgba(74,144,217,0.2);
+    }
+    .tag.warm { background: rgba(232,168,124,0.1); color: var(--warm-accent); border-color: rgba(232,168,124,0.2); }
+    .tag.red { background: rgba(232,92,92,0.1); color: var(--warm-red); border-color: rgba(232,92,92,0.2); }
+
+    h2 {
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      font-weight: 800;
+      margin: 60px 0 20px;
+      line-height: 1.3;
+      color: var(--text-primary);
+    }
+    h2 .icon { margin-right: 10px; }
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 30px 0 14px;
+      color: var(--blue-glow);
+    }
+    p {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      line-height: 1.85;
+    }
+    strong { color: var(--text-primary); font-weight: 600; }
+
+    /* ─── Story Block ─── */
+    .story-block {
+      background: var(--gradient-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 32px;
+      margin: 40px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .story-block::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      font-size: 120px;
+      color: rgba(74,144,217,0.06);
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+    .story-block p {
+      color: var(--text-primary);
+      font-size: 1.15rem;
+      font-style: italic;
+      margin-bottom: 0;
+    }
+    .story-block .source {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 16px;
+      font-style: normal;
+    }
+
+    /* ─── Highlight Box ─── */
+    .highlight-box {
+      background: rgba(232,92,92,0.06);
+      border-left: 4px solid var(--warm-red);
+      border-radius: 0 12px 12px 0;
+      padding: 24px 28px;
+      margin: 30px 0;
+    }
+    .highlight-box.warning {
+      background: rgba(232,168,124,0.06);
+      border-left-color: var(--warm-accent);
+    }
+    .highlight-box.info {
+      background: rgba(74,144,217,0.06);
+      border-left-color: var(--blue-accent);
+    }
+    .highlight-box .hb-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .highlight-box.warning .hb-title { color: var(--warm-accent); }
+    .highlight-box.info .hb-title { color: var(--blue-accent); }
+    .highlight-box p { margin-bottom: 0; font-size: 1rem; }
+
+    /* ─── Section Divider ─── */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin: 60px 0;
+    }
+    .section-divider::before,
+    .section-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+    }
+    .section-divider .sd-icon {
+      font-size: 1.2rem;
+      opacity: 0.5;
+    }
+
+    /* ─── Visual Block ─── */
+    .visual-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 36px 0;
+    }
+    @media (max-width: 600px) {
+      .visual-block { grid-template-columns: 1fr; }
+    }
+    .visual-card {
+      background: var(--gradient-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      text-align: center;
+      transition: var(--transition);
+    }
+    .visual-card:hover { border-color: var(--blue-accent); transform: translateY(-3px); }
+    .visual-card .v-icon { font-size: 48px; margin-bottom: 12px; }
+    .visual-card .v-title {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+    .visual-card .v-desc { font-size: 0.85rem; color: var(--text-muted); }
+    .visual-card.ai-card { border-color: rgba(74,144,217,0.2); }
+    .visual-card.human-card { border-color: rgba(232,168,124,0.2); }
+    .visual-card.ai-card:hover { border-color: var(--blue-accent); }
+    .visual-card.human-card:hover { border-color: var(--warm-accent); }
+    .visual-card.ai-card .v-title { color: var(--blue-glow); }
+    .visual-card.human-card .v-title { color: var(--warm-accent); }
+
+    /* ─── Interactive Cards ─── */
+    .interactive-section {
+      background: var(--gradient-card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 40px;
+      margin: 50px 0;
+    }
+    .interactive-section h3 {
+      color: var(--text-primary);
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+    .interactive-section .is-sub {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 28px;
+    }
+    .choice-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 500px) { .choice-grid { grid-template-columns: 1fr; } }
+    .choice-btn {
+      padding: 16px 20px;
+      border-radius: 12px;
+      border: 2px solid var(--border);
+      background: transparent;
+      color: var(--text-secondary);
+      font-family: inherit;
+      font-size: 0.95rem;
+      cursor: pointer;
+      text-align: left;
+      transition: var(--transition);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .choice-btn .cb-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+    .choice-btn .cb-label { font-weight: 600; display: block; margin-bottom: 2px; }
+    .choice-btn .cb-desc { font-size: 0.78rem; opacity: 0.6; }
+    .choice-btn:hover { border-color: var(--blue-accent); color: var(--text-primary); background: rgba(74,144,217,0.05); }
+    .choice-btn .cb-tag {
+      font-size: 0.65rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+    .choice-btn .cb-tag.good { background: rgba(74,144,217,0.15); color: var(--blue-glow); }
+    .choice-btn .cb-tag.bad { background: rgba(232,92,92,0.15); color: var(--warm-red); }
+    .choice-btn .cb-tag.neutral { background: rgba(138,154,181,0.15); color: var(--text-secondary); }
+
+    .result-box {
+      padding: 20px 24px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: var(--transition);
+    }
+    .result-box.hidden { display: none; }
+    .result-box.good { background: rgba(74,144,217,0.08); border: 1px solid rgba(74,144,217,0.2); color: var(--blue-glow); }
+    .result-box.bad { background: rgba(232,92,92,0.08); border: 1px solid rgba(232,92,92,0.2); color: var(--warm-red); }
+    .result-box.neutral { background: rgba(138,154,181,0.08); border: 1px solid var(--border); color: var(--text-secondary); }
+
+    /* ─── Quote Block ─── */
+    blockquote {
+      border-left: 3px solid var(--blue-accent);
+      padding: 16px 24px;
+      margin: 30px 0;
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      font-style: italic;
+      background: rgba(74,144,217,0.04);
+      border-radius: 0 12px 12px 0;
+    }
+
+    /* ─── CTA Section ─── */
+    .cta-section {
+      background: var(--gradient-card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 48px 40px;
+      text-align: center;
+      margin: 60px 0;
+    }
+    .cta-section h3 {
+      color: var(--text-primary);
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+    .cta-section p {
+      max-width: 500px;
+      margin: 0 auto 28px;
+      text-align: center;
+    }
+    .cta-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .cta-btn {
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: var(--transition);
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .cta-btn.primary {
+      background: linear-gradient(135deg, var(--blue-accent), var(--blue-glow));
+      color: white;
+      box-shadow: 0 4px 20px rgba(74,144,217,0.3);
+    }
+    .cta-btn.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(74,144,217,0.4);
+    }
+    .cta-btn.secondary {
+      background: transparent;
+      border: 2px solid var(--border);
+      color: var(--text-secondary);
+    }
+    .cta-btn.secondary:hover { border-color: var(--blue-accent); color: var(--blue-glow); }
+
+    /* ─── Comment Form ─── */
+    .comment-section {
+      margin: 50px 0;
+    }
+    .comment-section h3 { color: var(--text-primary); }
+    .comment-input {
+      width: 100%;
+      background: rgba(30,30,46,0.6);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 0.95rem;
+      resize: vertical;
+      min-height: 100px;
+      outline: none;
+      transition: var(--transition);
+    }
+    .comment-input:focus { border-color: var(--blue-accent); }
+    .comment-input::placeholder { color: var(--text-muted); }
+    .comment-submit {
+      margin-top: 12px;
+      padding: 12px 28px;
+      border-radius: 50px;
+      border: none;
+      background: var(--blue-accent);
+      color: white;
+      font-family: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .comment-submit:hover { background: var(--blue-glow); transform: translateY(-1px); }
+
+    /* ─── Footer ─── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 48px 24px;
+      text-align: center;
+    }
+    footer .footer-brand {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--blue-glow);
+      margin-bottom: 8px;
+    }
+    footer .footer-brand span { color: var(--warm-accent); }
+    footer .footer-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      max-width: 400px;
+      margin: 0 auto 24px;
+    }
+    footer .footer-links {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    footer .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: var(--transition);
+    }
+    footer .footer-links a:hover { color: var(--blue-glow); }
+
+    /* ─── Scroll Reveal ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── Back to top ─── */
+    .back-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: rgba(10,22,40,0.9);
+      color: var(--text-secondary);
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: var(--transition);
+      opacity: 0;
+      pointer-events: none;
+      backdrop-filter: blur(10px);
+    }
+    .back-top.show { opacity: 1; pointer-events: auto; }
+    .back-top:hover { border-color: var(--blue-accent); color: var(--blue-glow); transform: translateY(-3px); }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 768px) {
+      article { padding: 40px 20px 80px; }
+      .interactive-section { padding: 28px 20px; }
+      .cta-section { padding: 36px 24px; }
+      .story-block { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <a href="#" class="logo">Sellator<span>.</span></a>
+  <a href="#" class="back-link" onclick="history.back(); return false;">
+    ← Quay lại
+  </a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-diamonds" id="diamonds"></div>
+
+  <div class="hero-badge">
+    <span class="dot"></span>
+    Bài viết • Góc nhìn tỉnh táo
+  </div>
+
+  <h1>
+    Mặt trái<br>của <span class="highlight">AI</span>
+  </h1>
+
+  <p class="excerpt">
+    Con người không hoàn hảo, AI cũng vậy. Không phải để hoảng sợ —
+    mà để <strong>tỉnh táo</strong>. Từ một người làm truyền thông kiêm tech.
+  </p>
+
+  <div class="hero-meta">
+    <span>📅 Tháng 4, 2026</span>
+    <span>⏱️ 12 phút đọc</span>
+    <span>✍️ Sellator Team</span>
+  </div>
+
+  <div class="hero-divider"></div>
+</section>
+
+<!-- Article -->
+<article>
+
+  <div class="article-meta-top">
+    <span class="tag">Hype AI</span>
+    <span class="tag warm">Sử dụng AI đúng cách</span>
+    <span class="tag red">Hạn chế của AI</span>
+  </div>
+
+  <!-- Hook: Diamond Story -->
+  <div class="story-block reveal">
+    <p>
+      Năm 1947, công ty khai thác kim cương lớn nhất thế giới — De Beers — đứng trước một vấn đề:
+      kim cương có quá nhiều trong tự nhiên, giá sẽ sụp đổ.
+      Họ không tăng cung. Họ <strong>tăng cầu</strong>.
+      Chiến dịch truyền thông lớn nhất thế kỷ 20 ra đời: "Kim cương vĩnh cửu."
+      Một loại đá trở thành biểu tượng của tình yêu vĩnh cửu.
+      Không phải vì đá đó đặc biệt.
+      Mà vì <strong>ai đó muốn bạn tin như vậy</strong>.
+    </p>
+    <p class="source">
+      Câu chuyện này không phải về kim cương.<br>
+      Nó là khuôn mẫu. Và khuôn mẫu đó đang lặp lại.
+    </p>
+  </div>
+
+  <p class="reveal">
+    Mỗi ngày, chúng ta đọc hàng chục bài viết về AI. "AI sẽ thay thế viết lách", "AI vượt mặt bác sĩ trong chẩn đoán", "AI sắp qua kỳ thi luật sư." 
+    Thế nhưng, đằng sau những con số ấn tượng ấy là gì?
+  </p>
+
+  <!-- ─── Section 1 ─── -->
+  <div class="section-divider reveal"><span class="sd-icon">💰</span></div>
+
+  <h2 class="reveal"><span class="icon">🏦</span>Ai đang hưởng lợi từ AI hype?</h2>
+
+  <p class="reveal">
+    Trước khi tin vào bất kỳ điều gì về AI, hãy hỏi một câu: <strong>Ai đang kiếm tiền từ niềm tin này?</strong>
+  </p>
+
+  <p class="reveal">
+    Những "người hưởng lợi" đầu tiên không phải là người dùng cuối — mà là:
+  </p>
+
+  <div class="visual-block reveal">
+    <div class="visual-card ai-card">
+      <div class="v-icon">🏢</div>
+      <div class="v-title">Big Tech</div>
+      <div class="v-desc">Microsoft, Google, Meta đầu tư hàng tỷ đô. Cổ phiếu tăng khi AI được nhắc đến.</div>
+    </div>
+    <div class="visual-card ai-card">
+      <div class="v-icon">📈</div>
+      <div class="v-title">Quỹ đầu tư</div>
+      <div class="v-desc">Dòng tiền đổ vào startup AI. Lợi nhuận được tính trên kỳ vọng, không phải thực tế.</div>
+    </div>
+    <div class="visual-card ai-card">
+      <div class="v-icon">🎓</div>
+      <div class="v-title">Khóa học AI</div>
+      <div class="v-desc">"Học AI để không bị thay thế" — tagline quen thuộc của hàng trăm khóa học triệu đô.</div>
+    </div>
+    <div class="visual-card ai-card">
+      <div class="v-icon">📱</div>
+      <div class="v-title">Nền tảng</div>
+      <div class="v-desc">Chatbot, ứng dụng AI — thu tiền từ người dùng trước khi chứng minh giá trị thực.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box warning reveal">
+    <div class="hb-title">⚠️ Câu hỏi cần đặt ra</div>
+    <p>Khi một người nói "AI sẽ thay đổi mọi thứ" — hãy hỏi: "Ai đang nói điều đó, và họ được lợi gì?"</p>
+  </div>
+
+  <!-- ─── Section 2 ─── -->
+  <div class="section-divider reveal"><span class="sd-icon">🧠</span></div>
+
+  <h2 class="reveal"><span class="icon">⚙️</span>Bản chất thực sự của AI: Không "thông minh", chỉ mô phỏng logic</h2>
+
+  <p class="reveal">
+    AI không "suy nghĩ". Nó <strong>tính xác suất</strong>.
+    Mọi câu trả lời của AI đều xuất phát từ một câu hỏi duy nhất:
+    <em>"Trong dữ liệu huấn luyện, từ/từ nào thường đi sau từ/từ này?"</em>
+  </p>
+
+  <div class="visual-block reveal">
+    <div class="visual-card ai-card">
+      <div class="v-icon">0️⃣ 1️⃣</div>
+      <div class="v-title">AI = Logic thuần túy</div>
+      <div class="v-desc">Mọi "suy nghĩ" đều là phép tính xác suất trên dữ liệu đã học.</div>
+    </div>
+    <div class="visual-card human-card">
+      <div class="v-icon">💡</div>
+      <div class="v-title">Con người = Trực giác</div>
+      <div class="v-desc">Quyết định đến từ linh cảm, trải nghiệm sống, cảm xúc — không thể tính bằng số.</div>
+    </div>
+  </div>
+
+  <p class="reveal">
+    Khi AI viết một bài quảng cáo "chuẩn", nó đang <strong> recombination</strong> — ghép nối lại những gì đã có.
+    Không có sáng tạo thực sự. Không có khoảnh khắc "ồ, ý tưởng này chưa ai nghĩ đến."
+    Chỉ là: "Pattern này xuất hiện nhiều trong dữ liệu."
+  </p>
+
+  <blockquote class="reveal">
+    "AI có thể mô tả hoàng hôn đẹp đến nghẹt thở — nhưng nó chưa bao giờ thức dậy lúc 5 giờ sáng để đón nhìn một buổi bình minh thực sự."
+  </blockquote>
+
+  <!-- ─── Section 3 ─── -->
+  <div class="section-divider reveal"><span class="sd-icon">❤️</span></div>
+
+  <h2 class="reveal"><span class="icon">💔</span>Điểm yếu lớn nhất: Cảm xúc, cảm nhận, trải nghiệm thực tế</h2>
+
+  <p class="reveal">
+    Đây là trục mà AI <strong>không bao giờ có thể vượt qua</strong> — không phải vì kỹ thuật chưa đủ,
+    mà vì bản chất của vấn đề.
+  </p>
+
+  <h3 class="reveal">AI có thể mô tả — nhưng không thể cảm nhận</h3>
+
+  <p class="reveal">
+    Một bài review về xoài:
+  </p>
+
+  <div class="highlight-box info reveal">
+    <div class="hb-title">🤖 AI viết:</div>
+    <p>
+      "Xoài chín mang đến vị ngọt đậm đà, kết hợp hoàn hảo với chút chua nhẹ ở lớp vỏ. 
+      Thịt quả mềm xốp, giàu vitamin C, tỏa hương thơm nhiệt đới đặc trưng."
+    </p>
+  </div>
+
+  <div class="highlight-box warning reveal">
+    <div class="hb-title">❤️ Con người viết:</div>
+    <p>
+      "Ăn xoài Thanh Miện lúc 3 giờ chiều nắng nóng Hải Phòng — vị ngọt như 
+      ký ức tuổi thơ, chua như cảm giác mất đi điều gì đó. Đó không phải vitamin. Đó là khoảnh khắc."
+    </p>
+  </div>
+
+  <p class="reveal">
+    AI mô tả xoài. Con người <strong>sống</strong> khoảnh khắc ăn xoài.
+    Và đó là tất cả sự khác biệt.
+  </p>
+
+  <h3 class="reveal">AI không biết "mệt" là gì</h3>
+
+  <p class="reveal">
+    AI có thể viết 100 bài quảng cáo liên tục không nghỉ.
+    Nhưng nó không biết cảm giác <strong>kiệt sức sau 10 tiếng làm việc</strong>,
+    không biết vị đắng của thất bại, không biết niềm vui khi một chiến dịch thành công.
+    Đó không phải "bug" của AI.
+    Đó là <strong>giới hạn cố hữu</strong> của bất kỳ hệ thống logic nào.
+  </p>
+
+  <!-- ─── Interactive Section ─── -->
+  <div class="interactive-section reveal">
+    <h3>🤔 Bạn đang dùng AI đúng chỗ chưa?</h3>
+    <p class="is-sub">Nhấn vào từng mục để xem gợi ý</p>
+
+    <div class="choice-grid">
+      <button class="choice-btn" onclick="showResult(this, 'good')">
+        <span class="cb-icon">📊</span>
+        <div>
+          <span class="cb-label">Phân tích dữ liệu</span>
+          <span class="cb-desc">Số liệu, thống kê, báo cáo</span>
+        </div>
+        <span class="cb-tag good">✓ Tốt</span>
+      </button>
+      <button class="choice-btn" onclick="showResult(this, 'neutral')">
+        <span class="cb-icon">📝</span>
+        <div>
+          <span class="cb-label">Viết content hoàn toàn</span>
+          <span class="cb-desc">Giao hết cho AI, không chỉnh sửa</span>
+        </div>
+        <span class="cb-tag bad">✗ Rủi ro</span>
+      </button>
+      <button class="choice-btn" onclick="showResult(this, 'good')">
+        <span class="cb-icon">💡</span>
+        <div>
+          <span class="cb-label">Brainstorm ý tưởng</span>
+          <span class="cb-desc">Gợi ý, xác định hướng, khung</span>
+        </div>
+        <span class="cb-tag good">✓ Tốt</span>
+      </button>
+      <button class="choice-btn" onclick="showResult(this, 'neutral')">
+        <span class="cb-icon">💬</span>
+        <div>
+          <span class="cb-label">Reply khách hàng</span>
+          <span class="cb-desc">Để AI viết toàn bộ tin nhắn</span>
+        </div>
+        <span class="cb-tag neutral">⚠ Cẩn thận</span>
+      </button>
+      <button class="choice-btn" onclick="showResult(this, 'good')">
+        <span class="cb-icon">🔍</span>
+        <div>
+          <span class="cb-label">Nghiên cứu nhanh</span>
+          <span class="cb-desc">Tổng hợp, tìm kiếm, định hướng</span>
+        </div>
+        <span class="cb-tag good">✓ Tốt</span>
+      </button>
+      <button class="choice-btn" onclick="showResult(this, 'bad')">
+        <span class="cb-icon">🧠</span>
+        <div>
+          <span class="cb-label">Thay thế tư duy chiến lược</span>
+          <span class="cb-desc">Để AI quyết định chiến lược thay bạn</span>
+        </div>
+        <span class="cb-tag bad">✗ Nguy hiểm</span>
+      </button>
+    </div>
+
+    <div class="result-box hidden" id="resultBox"></div>
+  </div>
+
+  <!-- ─── Section 4 ─── -->
+  <div class="section-divider reveal"><span class="sd-icon">⚖️</span></div>
+
+  <h2 class="reveal"><span class="icon">🎯</span>Khi nào nên dùng AI — Khi nào không?</h2>
+
+  <p class="reveal">
+    Sau nhiều tháng sử dụng AI trong công việc truyền thông và chiến lược,
+    đây là những gì mình rút ra:
+  </p>
+
+  <h3 class="reveal">✅ Nên dùng AI khi:</h3>
+  <ul class="reveal" style="padding-left: 24px; color: var(--text-secondary); line-height: 2.2; font-size: 1.05rem;">
+    <li>Cần <strong>định hướng nhanh</strong> — brainstorm, outline, khung tư duy</li>
+    <li>Xử lý <strong>dữ liệu lặp đi lặp lại</strong> — báo cáo, tổng hợp, phân loại</li>
+    <li>Tìm <strong>thông tin cơ bản</strong> — nghiên cứu, so sánh, định nghĩa</li>
+    <li>Tạo <strong>draft đầu tiên</strong> để bạn chỉnh sửa, không phải viết lại từ đầu</li>
+    <li>Tự động hóa <strong>quy trình rõ ràng</strong> — không cần sáng tạo</li>
+  </ul>
+
+  <h3 class="reveal">❌ Không nên dùng AI khi:</h3>
+  <ul class="reveal" style="padding-left: 24px; color: var(--text-secondary); line-height: 2.2; font-size: 1.05rem;">
+    <li>Cần <strong>sáng tạo thực sự</strong> — ý tưởng chưa từng có, cách kể chuyện mới</li>
+    <li>Xây dựng <strong>quan hệ, kết nối</strong> — giao tiếp, đàm phán, chăm sóc</li>
+    <li>Ra <strong>quyết định cảm xúc</strong> — tình yêu, gia đình, cuộc sống</li>
+    <li>Viết về <strong>trải nghiệm cá nhân</strong> — ký ức, cảm xúc, khoảnh khắc</li>
+    <li>Thay thế <strong>bản sắc cá nhân</strong> — giọng văn, phong cách, giá trị riêng</li>
+  </ul>
+
+  <!-- ─── CTA ─── -->
+  <div class="cta-section reveal">
+    <h3>Bạn đang dùng AI như thế nào?</h3>
+    <p>Chia sẻ góc nhìn của bạn — không anti-AI, không ủng hộ mù quáng. Chỉ là tỉnh táo.</p>
+    <div class="comment-section">
+      <textarea class="comment-input" id="commentInput" placeholder="Viết suy nghĩ của bạn ở đây..."></textarea>
+      <button class="comment-submit" onclick="submitComment()">Gửi góp ý</button>
+    </div>
+  </div>
+
+  <!-- ─── Conclusion ─── -->
+  <h2 class="reveal"><span class="icon">🌅</span>Kết luận: Tỉnh táo & Sống ý nghĩa hơn</h2>
+
+  <div class="story-block reveal">
+    <p>
+      AI là công cụ. Công cụ tốt nhất thế giới cũng chỉ là công cụ.
+      Con dao sắc có thể nấu ăn hoặc gây thương tích.
+      <strong>Không phải công cụ quyết định kết quả — mà là người cầm dao.</strong>
+    </p>
+  </div>
+
+  <p class="reveal">
+    Đừng để hype khiến bạn tin rằng AI thay thế được mọi thứ.
+    Và đừng để sợ hãi khiến bạn từ chối những gì AI có thể giúp.
+    <strong>Cân bằng</strong> — đó mới là điều khó nhất.
+  </p>
+
+  <p class="reveal">
+    Hãy để AI làm những gì AI giỏi: <strong>logic, dữ liệu, quy trình.</strong><br>
+    Và giữ cho mình những gì chỉ con người có: <strong>cảm xúc, trực giác, ý nghĩa.</strong>
+  </p>
+
+  <div class="highlight-box info reveal">
+    <div class="hb-title">📌 Lời kết</div>
+    <p>
+      Mặt trái của AI không phải để bạn sợ hãi.
+      Nó là để bạn <strong>hiểu rõ hơn</strong> — và sử dụng công nghệ một cách có ý thức.
+      Không phải người máy thay con người. Mà là con người <strong>dùng</strong> công cụ.
+    </p>
+  </div>
+
+  <!-- Final CTA -->
+  <div class="cta-section reveal">
+    <h3>Đọc thêm về AI từ góc nhìn thực tế</h3>
+    <p>Những bài viết tiếp theo sẽ phân tích sâu hơn về cách sử dụng AI có ý thức trong công việc và cuộc sống.</p>
+    <div class="cta-group">
+      <a href="#" class="cta-btn primary" onclick="subscribeAlert(); return false;">📬 Theo dõi bản tin</a>
+      <a href="#" class="cta-btn secondary">📖 Các bài viết khác</a>
+    </div>
+  </div>
+
+</article>
+
+<!-- Back to top -->
+<a href="#" class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">↑</a>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-brand">Sellator<span>.</span></div>
+  <p class="footer-desc">
+    Góc nhìn thực tế về công nghệ và truyền thông.<br>
+    Tỉnh táo. Cân bằng. Có ý thức.
+  </p>
+  <div class="footer-links">
+    <a href="#">Trang chủ</a>
+    <a href="#">Bài viết</a>
+    <a href="#">Về chúng tôi</a>
+    <a href="#">Liên hệ</a>
+  </div>
+  <p style="margin-top: 32px; font-size: 0.75rem; color: var(--text-muted);">
+    © 2026 Sellator. Mọi góc nhìn là của tác giả, không phải định kiến.
+  </p>
+</footer>
+
+<script>
+// ─── Hero Diamonds ───
+(function initDiamonds() {
+  const container = document.getElementById('diamonds');
+  const symbols = ['💎', '◆', '🔷', '✨', '◈', '◇', '⚡', '💠'];
+  for (let i = 0; i < 15; i++) {
+    const el = document.createElement('span');
+    el.className = 'diamond';
+    el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    el.style.cssText = `
+      left: ${Math.random() * 100}%;
+      top: ${Math.random() * 100}%;
+      animation-delay: ${Math.random() * 10}s;
+      animation-duration: ${8 + Math.random() * 8}s;
+    `;
+    container.appendChild(el);
+  }
+})();
+
+// ─── Scroll Reveal ───
+const revealEls = document.querySelectorAll('.reveal');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+revealEls.forEach(el => revealObs.observe(el));
+
+// ─── Back to top ───
+const backTop = document.getElementById('backTop');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 600) backTop.classList.add('show');
+  else backTop.classList.remove('show');
+});
+
+// ─── Interactive Choices ───
+function showResult(btn, type) {
+  const allBtns = document.querySelectorAll('.choice-btn');
+  allBtns.forEach(b => b.style.borderColor = '');
+  btn.style.borderColor = type === 'good' ? 'var(--blue-accent)' : type === 'bad' ? 'var(--warm-red)' : 'var(--warm-accent)';
+
+  const resultBox = document.getElementById('resultBox');
+  resultBox.classList.remove('hidden', 'good', 'bad', 'neutral');
+
+  const tips = {
+    good: '✓ Đây là điểm mạnh của AI. Dùng thoải mái nhưng luôn kiểm tra lại!',
+    bad: '✗ Cẩn thận! Đây là vùng AI dễ sai lệch nhất. Giữ quyền kiểm soát cho con người.',
+    neutral: '⚠ Tùy trường hợp. Chỉ dùng AI ở đây khi bạn hiểu rõ giới hạn của nó.'
+  };
+
+  resultBox.classList.add(type);
+  resultBox.innerHTML = `<strong>${btn.querySelector('.cb-label').textContent}:</strong> ${tips[type]}`;
+}
+
+// ─── Comment Submit ───
+function submitComment() {
+  const input = document.getElementById('commentInput');
+  if (!input.value.trim()) {
+    input.style.borderColor = 'var(--warm-red)';
+    input.placeholder = 'Hãy viết suy nghĩ trước khi gửi nhé...';
+    return;
+  }
+  input.value = '';
+  input.placeholder = 'Cảm ơn bạn đã chia sẻ! 💬';
+  input.style.borderColor = 'var(--blue-accent)';
+}
+
+// ─── Subscribe Alert ───
+function subscribeAlert() {
+  const email = prompt('Nhập email để đăng ký nhận bản tin:');
+  if (email && email.includes('@')) {
+    alert('✓ Đăng ký thành công! Bạn sẽ nhận được bản tin sớm thôi.');
+  }
+}
+</script>
+
+</body>
+</html>

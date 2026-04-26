@@ -16,7 +16,11 @@ Nội dung bổ sung ngoài lộ trình chính: bài viết chiều sâu, trải
 
 ## 📖 Bài viết chiều sâu
 
-_Các bài viết dài sẽ được thêm vào đây._
+| Bài | Mô tả | Đọc khi |
+|-----|-------|---------|
+| [mat-trai-ai](./mat-trai-ai/) | Góc nhìn tỉnh táo về AI: huyền thoại truyền thông, nhóm lợi ích kinh tế, bản chất chỉ là mô phỏng logic, hạn chế về cảm xúc | Muốn hiểu sâu hơn về mặt trái của AI — bổ sung cho trục Logic × Cảm xúc |
+
+> 📌 **Link từ khóa:** Bài này bổ sung cho phần *Khi nào KHÔNG NÊN dùng AI* trong [Bài 01 — Intro](../01-intro/README.md).
 
 ---
 
