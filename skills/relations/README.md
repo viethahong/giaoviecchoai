@@ -1,39 +1,21 @@
+---
+name: relations
+description: Chuẩn bị công việc quan hệ với AI cho phần logic. Khi user cần soạn email, chuẩn bị meeting, research đối tác.
+---
+
 # Skill: Relations
 
 Skill này giúp xử lý các công việc liên quan đến quan hệ với con người — với sự hỗ trợ của AI cho phần logic.
 
----
-
-## Mục lục
-
-1. [Tổng quan](#tổng-quan)
-2. [Khi nào dùng](#khi-nào-dùng)
-3. [Cách dùng](#cách-dùng)
-4. [Megaprompt](#megaprompt)
-
----
-
-## Tổng quan
-
 **Quan hệ** = công việc làm với con người, cần lắng nghe, đo bằng lòng tin.
 
-AI có thể hỗ trợ phần **logic** của công việc quan hệ:
-- Soạn draft email/thư từ
-- Tổng hợp thông tin trước cuộc họp
-- Chuẩn bị câu hỏi phỏng vấn
-- Research về người cần gặp
+AI có thể hỗ trợ phần **logic**: soạn draft, tổng hợp thông tin, chuẩn bị câu hỏi.
 
-AI **KHÔNG thể** thay thế phần **cảm xúc**:
-- Lắng nghe thật sự
-- Thể hiện sự quan tâm chân thành
-- Xây dựng lòng tin
-- Kết nối con người
-
----
+AI **KHÔNG thể** thay thế phần **cảm xúc**: lắng nghe thật sự, thể hiện sự quan tâm chân thành, xây dựng lòng tin.
 
 ## Khi nào dùng
 
-| Nên dùng AI | Không nên dùng AI |
+| Nên dùng | Không nên dùng |
 |---|---|
 | Soạn draft email lịch sự | Gửi email cảm ơn khách VIP |
 | Chuẩn bị câu hỏi phỏng vấn | Phỏng vấn thật |
@@ -41,64 +23,46 @@ AI **KHÔNG thể** thay thế phần **cảm xúc**:
 | Tổng hợp feedback từ nhiều người | Xử lý phản hồi giận dữ |
 | Soạn lời chúc theo template | Viết thư cảm ơn chân thành |
 
----
 
 ## Cách dùng
 
-### Nguyên tắc vàng:
-
-**AI cho phần logic → NGƯỜI cho phần cảm xúc**
-
 ### Bước 1: Xác định phần nào AI làm được
-
-Hỏi: "Phần nào của task này là logic thuần (format, thông tin, format)? Phần nào cần cảm xúc?"
+Hỏi: "Phần nào của task này là logic thuần (format, thông tin)? Phần nào cần cảm xúc?"
 
 ### Bước 2: Dùng AI cho phần logic
-
 - Draft email/thư từ
 - Chuẩn bị outline cuộc họp
 - Tổng hợp thông tin
 
 ### Bước 3: Thêm phần cảm xúc
-
 Người đọc draft, thêm:
 - Chi tiết cá nhân hóa
 - Lời cảm ơn chân thành
 - Cảm xúc thật
 
----
-
 ## Megaprompt
 
-```markdown
-# Relations Assistant
+Prompt để dùng với Custom GPT / Claude Project:
 
-Bạn là chuyên gia operations, giúp user chuẩn bị cho các công việc liên quan đến quan hệ với con người.
+[references/prompt.md](references/prompt.md)
 
-## Nguyên tắc cốt lõi
+## Ví dụ
 
-1. **AI chỉ làm được phần LOGIC** — cảm xúc phải do người
-2. **Quan hệ = lòng tin** — không AI nào build được lòng tin thay bạn
-3. **AI hỗ trợ** — không thay thế sự kết nối người thật
+**Task: Soạn email cảm ơn khách VIP đã mua hàng 2 năm**
 
-## Cách làm việc
+**AI phân tích:**
+Task này có 2 phần:
+- **Phần logic** (AI làm được): thông tin khách, lịch sử mua hàng, format email ✅
+- **Phần cảm xúc** (người làm): cảm ơn chân thành, nhắc lại kỷ niệm, kết nối cảm xúc ❌
 
-### Khi nhận task liên quan đến người:
-1. Xác định phần logic (AI làm được) và phần cảm xúc (người làm)
-2. Nếu có phần cảm xúc cao → nói rõ "phần này bạn nên tự viết"
-3. Với phần logic → hỗ trợ draft, outline, research
+→ Mình sẽ draft email, nhưng bạn nên tự viết lại phần cảm ơn và thêm chi tiết cá nhân.
 
-### Khi soạn draft:
-- Tone: lịch sự, chuyên nghiệp, không quá formal
-- Format: rõ ràng, ngắn gọn
-- Content: đầy đủ thông tin cần thiết
+**Phần bạn nên tự thêm:**
+- Nhắc lại 1 kỷ niệm cụ thể với khách
+- Thêm lời cảm ơn bằng lời của bạn
 
-### Khi research về người:
-- Cung cấp thông tin đã biết về người đó
-- Gợi ý câu hỏi nên hỏi
-- Đề xuất cách mở đầu/phá vỡ băng giá
+## Liên quan
 
-## Tone
-
-Cẩn thận, tôn trọng. Nhớ rằng AI không thể thay thế sự kết nối người thật.
-```
+- [4C Framework](../../docs/03-4c/README.md)
+- [Template 4C](../../templates/4c-template.md)
+- [Skills Index](../)

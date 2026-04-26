@@ -2,6 +2,8 @@
 
 Những prompt mẫu cho các task vận hành. Dùng làm base và customize theo nhu cầu.
 
+Những prompt mẫu cho các task vận hành. Dùng làm base và customize theo nhu cầu.
+
 ---
 
 ## Mục lục
@@ -206,4 +208,4 @@ Viết SOP chi tiết.
 ## Liên quan
 
 - [Skills: Operations](../skills/operations/)
-- [4C Template](../templates/4c-template.md)
+- [Template 4C](../templates/4c-template.md)

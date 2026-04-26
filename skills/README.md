@@ -1,6 +1,10 @@
 # Skills Index
 
-Bộ skills đóng gói theo framework 4C, dùng cho AI agent.
+Bộ skills đóng gói theo framework 4C, dùng cho AI agent hiểu cách xử lý từng loại task.
+
+Mỗi skill gồm:
+- `SKILL.md` — Hướng dẫn + YAML frontmatter (cho AI agent trigger)
+- `references/prompt.md` — Megaprompt để dùng với Custom GPT / Claude Project
 
 ---
 
@@ -13,36 +17,6 @@ Bộ skills đóng gói theo framework 4C, dùng cho AI agent.
 | [operations](./operations/) | Vận hành tự động | Khi cần tự động hóa task lặp lại |
 | [relations](./relations/) | Quan hệ với người | Khi cần chuẩn bị cho công việc quan hệ |
 | [strategy](./strategy/) | Chiến lược | Khi cần hỗ trợ quyết định quan trọng |
-
----
-
-## Cách dùng
-
-Mỗi skill gồm:
-- `README.md` — Hướng dẫn sử dụng
-- `prompt.md` — Megaprompt để tạo Custom GPT / Claude Project
-
-### Để tạo AI assistant mới:
-
-1. Chọn skill phù hợp với nhu cầu
-2. Copy nội dung `prompt.md`
-3. Paste vào system prompt của AI assistant bạn đang dùng
-4. Bắt đầu sử dụng
-
-### Kết hợp nhiều skills:
-
-Bạn có thể tạo 1 AI assistant tổng hợp bằng cách ghép nhiều prompt lại:
-
-```
-# Assistant
-
-Bạn là [tên], kết hợp các skills:
-- delegate-to-ai: giúp ủy thác việc cho AI
-- content-creation: giúp tạo content
-- operations: giúp tự động hóa vận hành
-
-[Kết hợp các megaprompts]
-```
 
 ---
 
@@ -72,6 +46,6 @@ Bạn là [tên], kết hợp các skills:
 
 ## Liên quan
 
-- [Prompts library](../prompts/)
+- [Prompts library](../prompts/) — Prompt templates để điền vào
+- [Templates](../templates/) — Framework templates (4C, Matrix)
 - [4C Framework](../docs/03-4c/README.md)
-- [Templates](../templates/)

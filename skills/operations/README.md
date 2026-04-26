@@ -1,20 +1,11 @@
+---
+name: operations
+description: Tự động hóa công việc vận hành lặp lại bằng AI. Khi user có task lặp lại, có format chuẩn, muốn làm nhanh hơn.
+---
+
 # Skill: Operations
 
 Skill này giúp tự động hóa các công việc vận hành lặp lại hàng ngày bằng AI.
-
----
-
-## Mục lục
-
-1. [Tổng quan](#tổng-quan)
-2. [Khi nào dùng](#khi-nào-dùng)
-3. [Cách dùng](#cách-dùng)
-4. [Megaprompt](#megaprompt)
-5. [Prompt library](../../prompts/operations/)
-
----
-
-## Tổng quan
 
 **Operations** là các công việc lặp lại, có quy trình rõ, đo được bằng số lượng.
 
@@ -22,8 +13,6 @@ Skill này giúp tự động hóa các công việc vận hành lặp lại hà
 - Lặp lại nhiều → AI học được pattern
 - Có format chuẩn → AI trả output đúng format
 - Không cần cảm xúc → AI phù hợp 100%
-
----
 
 ## Khi nào dùng
 
@@ -36,66 +25,51 @@ Skill này giúp tự động hóa các công việc vận hành lặp lại hà
 | Tổng hợp data | Gặp khách hàng |
 | Tạo SOP | Xử lý khủng hoảng |
 
----
 
-## Các loại operations task
+## Cách dùng
 
-### 1. Email Operations
-- Email FAQ
-- Email xác nhận đơn
-- Email reminder
-- Email báo cáo định kỳ
+### Bước 1: Xác định task có phải operations không
+- Lặp lại? Có format chuẩn? Không cần cảm xúc?
 
-### 2. Content Operations
-- Caption theo template
-- Meta description
-- Alt text cho ảnh
-- Product description
+### Bước 2: Viết prompt theo 4C
+Dùng [4c-template.md](../../templates/4c-template.md)
 
-### 3. Data Operations
-- Tổng hợp số liệu
-- Làm báo cáo tuần/tháng
-- Checklist review
+### Bước 3: Gửi cho AI
+AI tạo output theo format chuẩn
 
-### 4. Documentation
-- SOP viết quy trình
-- Meeting notes tóm tắt
-- Knowledge base article
-
----
+### Bước 4: Verify
+Kiểm tra output đúng format, đầy đủ thông tin
 
 ## Megaprompt
 
-```markdown
-# Operations Assistant
+Prompt để dùng với Custom GPT / Claude Project:
 
-Bạn là chuyên gia operations, giúp user tự động hóa các công việc lặp lại bằng AI.
+[references/prompt.md](references/prompt.md)
 
-## Nguyên tắc cốt lõi
+## Ví dụ
 
-1. **Operations = Logic thuần** — AI làm được tốt nhất
-2. **Format chuẩn** — output phải đúng template
-3. **Efficiency** — làm nhanh, không waste thời gian
-4. **Consistency** — output phải nhất quán mỗi lần
+**Task: Viết email xác nhận đơn hàng cho khách**
 
-## Cách làm việc
+**AI phân tích:** Task này là operations thuần — có format chuẩn, lặp lại, không cần cảm xúc. AI làm được 100%.
 
-### Khi nhận task:
-1. Xác định task có phải operations không (lặp lại, có format, không cần cảm xúc)
-2. Nếu KHÔNG: đề xuất cách khác
-3. Nếu CÓ: xác định format và viết prompt
-
-### Khi viết SOP bằng AI:
-- Liệt kê steps rõ ràng
-- Mỗi step là 1 action cụ thể
-- Có checkpoint để verify
-
-### Khi tạo email:
-- Subject line rõ ràng
-- Body ngắn gọn, đi thẳng vào vấn đề
-- Signature nếu cần
-
-## Tone
-
-Ngắn gọn, hiệu quả. Không thêm color commentary. Làm xong rồi thôi.
+**Output:**
 ```
+Subject: Xác nhận đơn hàng #DH12345
+
+Chào [Tên khách],
+
+Mình xác nhận đã nhận được đơn hàng #DH12345 với:
+- [Sản phẩm 1]: [Số lượng] x [Giá]
+- Tổng cộng: [Giá]
+
+Dự kiến giao hàng: [Ngày]
+
+Nếu có câu hỏi gì, reply email này nhé.
+[Mình tên], [Địa chỉ shop]
+```
+
+## Liên quan
+
+- [4C Framework](../../docs/03-4c/README.md)
+- [Template 4C](../../templates/4c-template.md)
+- [Skills Index](../)

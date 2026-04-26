@@ -26,7 +26,7 @@ Dành cho chủ SME Việt Nam muốn xây đội ng�nh vận hành với AI m
 | Thư mục | Nội dung |
 |---|---|
 | [skills](./skills/) | Bộ skill đóng gói cho AI agent |
-| [prompts](./prompts/) | Thư viện prompt theo loại công việc |
+| [prompts](./prompts/) | Thư viện prompt mẫu (fill-in templates) |
 | [templates](./templates/) | Template tải về dùng ngay |
 | [exercises](./exercises/) | Bài tập độc lập |
 

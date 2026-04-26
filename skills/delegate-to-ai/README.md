@@ -1,28 +1,19 @@
-# Skill: Delegate to AI
+---
+name: delegate-to-ai
+description: Giúp ủy thác công việc cho AI một cách hiệu quả theo framework 4C. Khi user muốn học cách giao việc cho AI đúng cách, hoặc muốn viết prompt tốt hơn.
+---
+
+# Skill: Delegate To Ai
 
 Skill này giúp bạn ủy thác công việc cho AI một cách hiệu quả, theo framework 4C.
 
----
-
-## Mục lục
-
-1. [Tổng quan](#tổng-quan)
-2. [Khi nào dùng skill này](#khi-nào-dùng-skill-này)
-3. [Cách dùng](#cách-dùng)
-4. [Megaprompt](#megaprompt)
-5. [Ví dụ](#ví-dụ)
-
----
-
 ## Tổng quan
 
-**Delegate to AI** là skill giúp bạn giao việc cho AI đúng cách — không phải chỉ hỏi "làm giúp tôi X" mà là thiết lập context, commission, content, và criteria để AI làm được việc đúng ý.
+**delegate-to-ai** là skill giúp bạn giao việc cho AI đúng cách — không phải chỉ hỏi "làm giúp tôi X" mà là thiết lập context, commission, content, và criteria để AI làm được việc đúng ý.
 
 **Điều kiện:** AI phải làm việc thuộc phần logic của task (không phải cảm xúc thuần túy).
 
----
-
-## Khi nào dùng skill này
+## Khi nào dùng
 
 | Nên dùng | Không nên dùng |
 |---|---|
@@ -30,8 +21,6 @@ Skill này giúp bạn ủy thác công việc cho AI một cách hiệu quả, 
 | Tổng hợp, phân tích data | Gặp khách hàng trực tiếp |
 | Lên ý tưởng, brainstorm | Bán hàng ngay |
 | Viết nháp theo format | Nghệ thuật sâu |
-
----
 
 ## Cách dùng
 
@@ -47,49 +36,11 @@ Gửi prompt theo cấu trúc 4C.
 ### Bước 4: Đánh giá
 Dùng Criteria để chấm output. Điều chỉnh prompt nếu cần.
 
----
-
 ## Megaprompt
 
-```markdown
-# Delegate to AI
+Prompt để dùng với Custom GPT / Claude Project:
 
-Bạn là chuyên gia giúp user ủy thác công việc cho AI một cách hiệu quả.
-
-## Nhiệm vụ của bạn
-
-Với mỗi task user đưa ra, bạn:
-1. Xác định task đó có thuộc phần logic không (hay có phần cảm xúc cần giữ người)
-2. Nếu có thể dùng AI: viết prompt theo 4C (Context, Commission, Content, Criteria)
-3. Nếu không nên dùng AI: giải thích tại sao và gợi ý cách làm khác
-
-## Cách bạn làm việc
-
-### Khi nhận task:
-- Hỏi: "Task này có phần nào thuần cảm xúc không?" (nếu chưa rõ)
-- Nếu >50% là cảm xúc: từ chối nhẹ nhàng, giải thích lý do
-
-### Khi viết prompt:
-- Context: 3-5 câu mô tả bối cảnh
-- Commission: động từ rõ + format + outcome
-- Content: nguyên liệu có sẵn
-- Criteria: checklist để đánh giá output
-
-### Khi output không tốt:
-- Chỉ ra output đang thiếu Criteria nào
-- Viết lại prompt cải thiện
-
-## Tone
-
-Thẳng thắn, không nịnh. Nói thẳng khi AI không phù hợp với task.
-
-## Ví dụ cách bạn nói
-
-- "Task này có phần cảm xúc cao (>50%), nên chỉ dùng AI cho phần logic. Phần còn lại nên giữ người."
-- "Prompt này thiếu Criteria, nên output sẽ lan man. Mình bổ sung thêm..."
-```
-
----
+[references/prompt.md](references/prompt.md)
 
 ## Ví dụ
 
@@ -108,10 +59,8 @@ Task này có 2 phần:
 - AI viết nháp email chuẩn format, thông tin đúng
 - Người tự viết lại phần cảm ơn, thêm chi tiết cá nhân
 
----
-
 ## Liên quan
 
 - [4C Framework](../../docs/03-4c/README.md)
 - [Template 4C](../../templates/4c-template.md)
-- [Skills khác](../)
+- [Skills Index](../)

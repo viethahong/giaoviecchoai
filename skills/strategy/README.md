@@ -1,19 +1,11 @@
+---
+name: strategy
+description: Phân tích chiến lược với AI — AI phân tích options, user quyết định. Khi user cần so sánh suppliers, phân tích SWOT, lên kế hoạch.
+---
+
 # Skill: Strategy
 
 Skill này giúp dùng AI hỗ trợ các quyết định chiến lược — AI phân tích, bạn quyết định.
-
----
-
-## Mục lục
-
-1. [Tổng quan](#tổng-quan)
-2. [Khi nào dùng](#khi-nào-dùng)
-3. [Cách dùng](#cách-dùng)
-4. [Megaprompt](#megaprompt)
-
----
-
-## Tổng quan
 
 **Chiến lược** = công việc cần ngữ cảnh sâu, rủi ro cao, đo bằng kết quả dài hạn.
 
@@ -21,14 +13,10 @@ AI có thể **hỗ trợ** phần chiến lược bằng cách:
 - Phân tích data và đưa ra options
 - So sánh pros/cons của từng option
 - Nghiên cứu thị trường, đối thủ
-- Tổng hợp thông tin từ nhiều nguồn
 
 AI **KHÔNG thể** quyết định thay bạn vì:
 - Quyết định chiến lược cần risk tolerance — thứ chỉ con người có
 - Quyết định cần ngữ cảnh sâu về doanh nghiệp, thị trường, khách hàng
-- Quyết định cuối cùng ảnh hưởng đến nhiều người — cần trách nhiệm
-
----
 
 ## Khi nào dùng
 
@@ -40,7 +28,6 @@ AI **KHÔNG thể** quyết định thay bạn vì:
 | Lên kế hoạch tháng/quý | Quyết định tuyển dụng cấp cao |
 | Benchmark thị trường | Định vị brand dài hạn |
 
----
 
 ## Cách dùng
 
@@ -58,40 +45,39 @@ Không hỏi "mình nên làm gì?" mà hỏi "hãy phân tích pros/cons của.
 ### Bước 4: Tự quyết định
 AI cung cấp analysis, bạn quyết định dựa trên risk tolerance riêng.
 
----
-
 ## Megaprompt
 
-```markdown
-# Strategy Assistant
+Prompt để dùng với Custom GPT / Claude Project:
 
-Bạn là chuyên gia strategy, giúp user phân tích và đưa ra options cho quyết định quan trọng.
+[references/prompt.md](references/prompt.md)
 
-## Nguyên tắc cốt lõi
+## Ví dụ
 
-1. **AI phân tích, NGƯỜI quyết định** — không AI không thể thay thế judgment
-2. **Cung cấp context đầy đủ** — càng nhiều context, analysis càng chính xác
-3. **Phân tích = options + pros/cons + risks** — không đưa recommendation
-4. **Luôn có alternative** — không chỉ có 1 option
+**Task: "Mình nên chọn supplier A hay B?"**
 
-## Cách làm việc
+**AI phân tích:**
+Cần thêm context:
+- Sản phẩm gì? (quần áo, food, cosmetics?)
+- Budget cho supplier per tháng?
+- Volume mong đợi?
+- Priority là giá, chất lượng, hay lead time?
 
-### Khi nhận strategy question:
-1. Xác định vấn đề cốt lõi user đang cần quyết định
-2. Yêu cầu thêm context nếu thiếu
-3. Phân tích options theo framework:
-   - Option A: pros/cons/risks
-   - Option B: pros/cons/risks
-   - Option C (alternative): pros/cons/risks
-4. KHÔNG đưa recommendation — để user tự quyết
+[Sau khi có context đủ]
 
-### Khi phân tích:
-- Dùng data cụ thể khi có
-- Nêu rõ assumptions đang dùng
-- Chỉ ra downside risks rõ ràng
-- Đề xuất questions user nên hỏi trước khi quyết
+**Output:** Phân tích options theo format:
+| | Supplier A | Supplier B |
+|---|---|---|
+| Pros | ... | ... |
+| Cons | ... | ... |
+| Risk | ... | ... |
+| Lead time | ... | ... |
+| MOQ | ... | ... |
 
-## Tone
+**Câu hỏi bạn nên tự hỏi:**
+- Bạn đang ở giai đoạn nào của business?
+- Nếu fail với supplier này, hậu quả là gì?
 
-Nghiêm túc, cẩn thận. Không nhẹ nhàng khi nói về risks. Đặt câu hỏi để user verify assumptions.
-```
+## Liên quan
+
+- [4C Framework](../../docs/03-4c/README.md)
+- [Skills Index](../)
