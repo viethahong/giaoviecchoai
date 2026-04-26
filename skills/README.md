@@ -1,0 +1,77 @@
+# Skills Index
+
+Bộ skills đóng gói theo framework 4C, dùng cho AI agent.
+
+---
+
+## Danh sách Skills
+
+| Skill | Mô tả | Khi nào dùng |
+|---|---|---|
+| [delegate-to-ai](./delegate-to-ai/) | Ủy thác việc cho AI | Khi muốn học cách giao việc đúng |
+| [content-creation](./content-creation/) | Tạo content | Khi viết content marketing |
+| [operations](./operations/) | Vận hành tự động | Khi cần tự động hóa task lặp lại |
+| [relations](./relations/) | Quan hệ với người | Khi cần chuẩn bị cho công việc quan hệ |
+| [strategy](./strategy/) | Chiến lược | Khi cần hỗ trợ quyết định quan trọng |
+
+---
+
+## Cách dùng
+
+Mỗi skill gồm:
+- `README.md` — Hướng dẫn sử dụng
+- `prompt.md` — Megaprompt để tạo Custom GPT / Claude Project
+
+### Để tạo AI assistant mới:
+
+1. Chọn skill phù hợp với nhu cầu
+2. Copy nội dung `prompt.md`
+3. Paste vào system prompt của AI assistant bạn đang dùng
+4. Bắt đầu sử dụng
+
+### Kết hợp nhiều skills:
+
+Bạn có thể tạo 1 AI assistant tổng hợp bằng cách ghép nhiều prompt lại:
+
+```
+# Assistant
+
+Bạn là [tên], kết hợp các skills:
+- delegate-to-ai: giúp ủy thác việc cho AI
+- content-creation: giúp tạo content
+- operations: giúp tự động hóa vận hành
+
+[Kết hợp các megaprompts]
+```
+
+---
+
+## Mỗi skill giải quyết vấn đề gì?
+
+### delegate-to-ai
+**Vấn đề:** "Mình hỏi AI nhưng nó không làm đúng ý"
+**Giải pháp:** Học cách viết prompt theo 4C
+
+### content-creation
+**Vấn đề:** "AI viết content nhưng không có giọng văn"
+**Giải pháp:** Dùng AI cho phần logic, tự viết phần cảm xúc
+
+### operations
+**Vấn đề:** "Mình làm đi làm lại cùng 1 task"
+**Giải pháp:** Tạo SOP và dùng AI để làm tự động
+
+### relations
+**Vấn đề:** "Phải gặp khách/họp team nhưng không biết chuẩn bị gì"
+**Giải pháp:** Dùng AI chuẩn bị phần logic, tự thêm cảm xúc
+
+### strategy
+**Vấn đề:** "Cần quyết định quan trọng, không biết phân tích thế nào"
+**Giải pháp:** Dùng AI phân tích options, tự quyết định
+
+---
+
+## Liên quan
+
+- [Prompts library](../prompts/)
+- [4C Framework](../docs/03-4c/README.md)
+- [Templates](../templates/)
