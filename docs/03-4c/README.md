@@ -1,5 +1,7 @@
 # Bài 03 — 4C Framework
 
+> 📚 **Học 4C tương tác:** [https://hahongviet.com/4C/](https://hahongviet.com/4C/)
+
 4C là framework giúp bạn viết prompt để AI làm được việc đúng ý. Mỗi C giải quyết một lỗi thường gặp khi giao việc cho AI.
 
 ---

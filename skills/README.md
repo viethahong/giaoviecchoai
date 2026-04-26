@@ -48,4 +48,5 @@ Mỗi skill gồm:
 
 - [Prompts library](../prompts/) — Prompt templates để điền vào
 - [Templates](../templates/) — Framework templates (4C, Matrix)
-- [4C Framework](../docs/03-4c/README.md)
+- [4C Framework](https://hahongviet.com/4C/) — Học tương tác
+- [4C Framework (docs)](../docs/03-4c/README.md) — Tài liệu chi tiết

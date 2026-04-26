@@ -79,5 +79,6 @@ Cần thêm context:
 
 ## Liên quan
 
-- [4C Framework](../../docs/03-4c/README.md)
+- [Học 4C tương tác](https://hahongviet.com/4C/)
+- [4C Framework (docs)](../../docs/03-4c/README.md)
 - [Skills Index](../)

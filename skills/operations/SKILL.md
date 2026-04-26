@@ -70,6 +70,7 @@ Nếu có câu hỏi gì, reply email này nhé.
 
 ## Liên quan
 
-- [4C Framework](../../docs/03-4c/README.md)
+- [Học 4C tương tác](https://hahongviet.com/4C/)
+- [4C Framework (docs)](../../docs/03-4c/README.md)
 - [Template 4C](../../templates/4c-template.md)
 - [Skills Index](../)
