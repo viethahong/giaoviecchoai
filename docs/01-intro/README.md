@@ -67,6 +67,14 @@ Một công việc thường **không thuần một phía**. Phải tách ra:
 
 ---
 
+## 🎯 Trải nghiệm thực tế
+
+Muốn *cảm nhận* sự khác biệt Logic × Cảm xúc thay vì chỉ đọc lý thuyết?
+
+👉 **[Con người & AI – 4 Trục Khác Biệt](../extra/ai-vs-human/)** — trải nghiệm tương tác trực quan: binary grid, emotion chaos, slider comparison, projection effect.
+
+---
+
 ## Bài tập
 
 [Liên quan: exercises/day-01.md](./exercises/day-01.md)

@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Con người & AI – 4 Trục Khác Biệt</title>
+  <meta name="description" content="Khám phá 4 trục khác biệt cốt lõi giữa Con người và AI. Tương tác, trực quan, dễ hiểu.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --human-warm: #FF6B35;
+      --human-warm-light: #FFB347;
+      --human-warm-pink: #FF8FAB;
+      --ai-cold: #00D4FF;
+      --ai-cold-purple: #7B2FFF;
+      --ai-cold-neon: #00FF88;
+      --bg-light: #FAFAFA;
+      --bg-dark: #0A0A1A;
+      --text-light: #1A1A2E;
+      --text-dark: #F0F0F0;
+      --card-light: #FFFFFF;
+      --card-dark: #151530;
+      --human-gradient: linear-gradient(135deg, #FF6B35, #FFB347, #FF8FAB);
+      --ai-gradient: linear-gradient(135deg, #00D4FF, #7B2FFF, #00FF88);
+      --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    [data-theme="dark"] {
+      --bg: var(--bg-dark);
+      --text: var(--text-dark);
+      --card: var(--card-dark);
+    }
+    [data-theme="light"] {
+      --bg: var(--bg-light);
+      --text: var(--text-light);
+      --card: var(--card-light);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: var(--transition);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* ─── Dark Mode Toggle ─── */
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid var(--human-warm);
+      background: var(--card);
+      cursor: pointer;
+      font-size: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .theme-toggle:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(255,107,53,0.3); }
+
+    /* ─── Header ─── */
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .header-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(255,107,53,0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse at 70% 50%, rgba(0,212,255,0.08) 0%, transparent 60%);
+    }
+    .header-particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .particle {
+      position: absolute;
+      font-size: 24px;
+      animation: float 6s ease-in-out infinite;
+      opacity: 0.6;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+      50% { transform: translateY(-30px) rotate(15deg); opacity: 1; }
+    }
+    header h1 {
+      font-size: clamp(2.2rem, 6vw, 4.5rem);
+      font-weight: 900;
+      background: linear-gradient(90deg, var(--human-warm), #FF8FAB, var(--ai-cold), #7B2FFF);
+      background-size: 300% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradientShift 6s ease infinite;
+      position: relative;
+      z-index: 1;
+    }
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    header .subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: var(--text);
+      opacity: 0.7;
+      margin-top: 16px;
+      max-width: 600px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-compare {
+      display: flex;
+      gap: 40px;
+      margin: 50px 0;
+      position: relative;
+      z-index: 1;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .hero-side {
+      width: 280px;
+      padding: 30px;
+      border-radius: 24px;
+      text-align: center;
+      transition: var(--transition);
+      cursor: default;
+    }
+    .hero-side:hover { transform: translateY(-8px); }
+    .hero-side.human {
+      background: rgba(255,107,53,0.08);
+      border: 2px solid rgba(255,107,53,0.2);
+    }
+    .hero-side.human:hover { border-color: var(--human-warm); box-shadow: 0 20px 60px rgba(255,107,53,0.15); }
+    .hero-side.ai {
+      background: rgba(0,212,255,0.06);
+      border: 2px solid rgba(0,212,255,0.15);
+    }
+    .hero-side.ai:hover { border-color: var(--ai-cold); box-shadow: 0 20px 60px rgba(0,212,255,0.15); }
+    .hero-side .icon { font-size: 64px; margin-bottom: 12px; }
+    .hero-side .label {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .hero-side.human .label { color: var(--human-warm); }
+    .hero-side.ai .label { color: var(--ai-cold); }
+    .hero-side .desc { font-size: 0.9rem; opacity: 0.7; }
+    .vs-badge {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--card);
+      border: 3px solid var(--human-warm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.2rem;
+      align-self: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .cta-btn {
+      padding: 16px 40px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      background: var(--human-gradient);
+      color: white;
+      position: relative;
+      z-index: 1;
+      transition: var(--transition);
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 8px 30px rgba(255,107,53,0.3);
+    }
+    .cta-btn:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 12px 40px rgba(255,107,53,0.4);
+    }
+
+    /* ─── Navigation Tabs ─── */
+    .nav-tabs {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--card);
+      border-bottom: 1px solid rgba(128,128,128,0.15);
+      padding: 0 20px;
+      backdrop-filter: blur(20px);
+      transition: var(--transition);
+    }
+    .nav-tabs-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .nav-tabs-inner::-webkit-scrollbar { display: none; }
+    .nav-tab {
+      padding: 16px 24px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: var(--text);
+      opacity: 0.5;
+      white-space: nowrap;
+      transition: var(--transition);
+      border-bottom: 3px solid transparent;
+      flex-shrink: 0;
+    }
+    .nav-tab:hover { opacity: 0.8; }
+    .nav-tab.active {
+      opacity: 1;
+      border-bottom-color: var(--human-warm);
+    }
+    .nav-tab .tab-num {
+      display: inline-block;
+      background: rgba(255,107,53,0.1);
+      color: var(--human-warm);
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-left: 6px;
+      font-weight: 700;
+    }
+    .nav-tab.active .tab-num { background: var(--human-warm); color: white; }
+
+    /* ─── Sections ─── */
+    .section {
+      min-height: 100vh;
+      padding: 80px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    @media (max-width: 768px) {
+      .section {
+        min-height: auto;
+        padding: 60px 16px;
+      }
+    }
+    .section-content {
+      max-width: 900px;
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .section-content .card {
+      text-align: left;
+    }
+    .section-title {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .section-desc {
+      text-align: center;
+      opacity: 0.7;
+      max-width: 650px;
+      margin: 0 auto 50px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    /* ─── Card ─── */
+    .card {
+      background: var(--card);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.06);
+      transition: var(--transition);
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 50px rgba(0,0,0,0.1);
+    }
+
+    /* ─── Axis Grid (2-column layout) ─── */
+    .axis-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    @media (max-width: 700px) {
+      .axis-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+
+    /* ─── Axis Section ─── */
+    .axis { display: none; }
+    .axis.active { display: block; }
+
+    /* ─── Grid 0-1 Animation ─── */
+    .grid-binary {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 6px;
+      max-width: 320px;
+      margin: 30px auto;
+    }
+    .grid-cell {
+      aspect-ratio: 1;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+      cursor: default;
+      transition: var(--transition);
+    }
+    .grid-cell.zero {
+      background: rgba(0,212,255,0.1);
+      color: var(--ai-cold);
+      border: 1px solid rgba(0,212,255,0.2);
+    }
+    .grid-cell.one {
+      background: rgba(123,47,255,0.1);
+      color: #7B2FFF;
+      border: 1px solid rgba(123,47,255,0.2);
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    .grid-cell.blink { animation: blink 1s ease-in-out infinite; }
+
+    /* ─── Emotion Chaos ─── */
+    .emotion-field {
+      position: relative;
+      height: 200px;
+      border-radius: 20px;
+      background: rgba(255,107,53,0.05);
+      border: 2px dashed rgba(255,107,53,0.2);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .emotion-field .placeholder-text {
+      font-size: 0.9rem;
+      opacity: 0.4;
+      text-align: center;
+    }
+    .emotion-item {
+      position: absolute;
+      font-size: 32px;
+      animation: chaos 0s forwards;
+      transition: none;
+    }
+    @keyframes chaos {
+      0% { transform: translate(0, 0) rotate(0deg) scale(0); opacity: 0; }
+      20% { transform: translate(var(--tx), var(--ty)) rotate(var(--r)) scale(1.2); opacity: 1; }
+      100% { transform: translate(calc(var(--tx) * 3), calc(var(--ty) * 3)) rotate(var(--r)) scale(0.5); opacity: 0; }
+    }
+    .shake-btn {
+      display: block;
+      margin: 20px auto 0;
+      padding: 12px 30px;
+      border-radius: 50px;
+      border: 2px solid var(--human-warm);
+      background: rgba(255,107,53,0.08);
+      color: var(--human-warm);
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .shake-btn:hover {
+      background: var(--human-warm);
+      color: white;
+      transform: scale(1.05);
+    }
+
+    /* ─── Slider Comparison ─── */
+    .slider-compare {
+      margin: 30px 0;
+    }
+    .slider-wrapper {
+      position: relative;
+      height: 300px;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .slider-panel {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      transition: var(--transition);
+    }
+    .slider-panel.map {
+      background: linear-gradient(135deg, #e8e8e8, #d0d0d0);
+      clip-path: inset(0 50% 0 0);
+    }
+    .slider-panel.world {
+      background: linear-gradient(135deg, #87CEEB, #90EE90, #F0E68C);
+      clip-path: inset(0 0 0 50%);
+    }
+    .slider-panel .panel-icon { font-size: 60px; margin-bottom: 12px; }
+    .slider-panel .panel-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .slider-panel.map .panel-title { color: #555; }
+    .slider-panel.world .panel-title { color: #2d5a1b; }
+    .slider-panel .panel-desc { font-size: 0.85rem; opacity: 0.6; text-align: center; }
+    .slider-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 4px;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      cursor: ew-resize;
+      z-index: 5;
+    }
+    .slider-line::before {
+      content: '↔';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 36px;
+      height: 36px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      font-size: 18px;
+    }
+    .slider-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      opacity: 0.6;
+    }
+
+    /* ─── AI Demo Box ─── */
+    .ai-demo-box {
+      background: linear-gradient(135deg, rgba(0,212,255,0.06), rgba(123,47,255,0.06));
+      border: 2px solid rgba(0,212,255,0.15);
+      border-radius: 20px;
+      padding: 30px;
+      margin: 30px 0;
+    }
+    .ai-demo-box .demo-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--ai-cold);
+      margin-bottom: 12px;
+    }
+    .ai-demo-box .demo-question {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .ai-demo-input {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 2px solid rgba(0,212,255,0.2);
+      background: var(--card);
+      color: var(--text);
+      font-size: 1rem;
+      font-family: inherit;
+      outline: none;
+      transition: var(--transition);
+    }
+    .ai-demo-input:focus { border-color: var(--ai-cold); }
+    .ai-demo-response {
+      margin-top: 16px;
+      padding: 16px;
+      background: rgba(0,212,255,0.05);
+      border-radius: 12px;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      min-height: 60px;
+      opacity: 0.8;
+    }
+    .human-feel-form {
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(128,128,128,0.15);
+    }
+    .human-feel-form h4 {
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+    .feel-emoji-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .feel-emoji {
+      font-size: 36px;
+      cursor: pointer;
+      transition: var(--transition);
+      padding: 8px;
+      border-radius: 12px;
+      border: 2px solid transparent;
+      user-select: none;
+    }
+    .feel-emoji:hover { transform: scale(1.3); }
+    .feel-emoji.selected { border-color: var(--human-warm); background: rgba(255,107,53,0.1); transform: scale(1.2); }
+    .feel-slider-wrap {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .feel-slider-wrap span { font-size: 0.85rem; opacity: 0.6; white-space: nowrap; }
+    .feel-slider-wrap input[type="range"] {
+      flex: 1;
+      height: 8px;
+      border-radius: 4px;
+      background: rgba(255,107,53,0.2);
+      outline: none;
+      -webkit-appearance: none;
+      min-width: 120px;
+    }
+    .feel-slider-wrap input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--human-warm);
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(255,107,53,0.4);
+    }
+    .feel-slider-wrap .slider-val {
+      font-weight: 700;
+      color: var(--human-warm);
+      min-width: 40px;
+      text-align: right;
+    }
+
+    /* ─── Projection Effect ─── */
+    .projection-scale {
+      margin: 30px 0;
+      text-align: center;
+    }
+    .projection-label {
+      font-size: 1rem;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .projection-bar-wrap {
+      position: relative;
+      height: 60px;
+      background: rgba(128,128,128,0.08);
+      border-radius: 30px;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+    .projection-bar {
+      height: 100%;
+      border-radius: 30px;
+      background: var(--human-gradient);
+      transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 16px;
+      min-width: 60px;
+    }
+    .projection-bar .bar-val {
+      color: white;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+    .projection-scale input[type="range"] {
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: rgba(255,107,53,0.2);
+      outline: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+    .projection-scale input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--human-warm);
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(255,107,53,0.4);
+    }
+    .projection-hint {
+      margin-top: 16px;
+      font-size: 0.9rem;
+      opacity: 0.6;
+    }
+    .hallucination-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .hallucination-overlay.show { display: flex; }
+    .hallucination-overlay .hl-text {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--ai-cold);
+      text-align: center;
+      animation: pulse 1.5s ease infinite;
+    }
+    .hallucination-overlay .hl-sub {
+      color: white;
+      margin-top: 12px;
+      opacity: 0.7;
+    }
+    .hallucination-overlay .hl-close {
+      margin-top: 30px;
+      padding: 12px 30px;
+      border-radius: 50px;
+      border: 2px solid white;
+      background: transparent;
+      color: white;
+      cursor: pointer;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.05); }
+    }
+
+    /* ─── Footer ─── */
+    footer {
+      background: var(--card);
+      border-top: 1px solid rgba(128,128,128,0.1);
+      padding: 60px 20px;
+      text-align: center;
+    }
+    footer .footer-inspire {
+      font-size: 0.95rem;
+      opacity: 0.6;
+      max-width: 500px;
+      margin: 0 auto 30px;
+      font-style: italic;
+    }
+    .footer-discuss {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 50px;
+      border: 2px solid rgba(123,47,255,0.3);
+      background: rgba(123,47,255,0.05);
+      color: #7B2FFF;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .footer-discuss:hover {
+      background: #7B2FFF;
+      color: white;
+      transform: translateY(-2px);
+    }
+    footer .credits {
+      margin-top: 40px;
+      font-size: 0.8rem;
+      opacity: 0.4;
+    }
+
+    /* ─── Scroll Animations ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 768px) {
+      .hero-compare { gap: 20px; }
+      .hero-side { width: 140px; padding: 20px; }
+      .hero-side .icon { font-size: 40px; }
+      .vs-badge { width: 40px; height: 40px; font-size: 0.9rem; }
+      .card { padding: 24px 20px; }
+      .nav-tab { padding: 14px 16px; font-size: 0.8rem; }
+      .slider-wrapper { height: 220px; }
+      .feel-emoji-row { gap: 8px; }
+      .feel-emoji { font-size: 28px; }
+      .slider-label { flex-direction: column; gap: 4px; align-items: center; font-size: 0.75rem; }
+      .projection-label { font-size: 0.9rem; }
+      .projection-scale input[type="range"] { height: 6px; }
+      .projection-bar-wrap { height: 48px; }
+    }
+
+    /* ─── Section Colors ─── */
+    .axis-1 { --accent: var(--human-warm); }
+    .axis-2 { --accent: #4CAF50; }
+    .axis-3 { --accent: #7B2FFF; }
+    .axis-4 { --accent: var(--ai-cold); }
+  </style>
+</head>
+<body>
+
+<!-- Dark Mode Toggle -->
+<button class="theme-toggle" onclick="toggleTheme()" title="Đổi giao diện">🌙</button>
+
+<!-- ─── Header ─── -->
+<header id="home">
+  <div class="header-bg"></div>
+  <div class="header-particles" id="particles"></div>
+
+  <h1>Con người & AI<br>4 Trục Khác Biệt</h1>
+  <p class="subtitle">Bạn nghĩ AI có cảm xúc thật không?<br>Hãy khám phá 4 trục này.</p>
+
+  <div class="hero-compare">
+    <div class="hero-side human reveal">
+      <div class="icon">❤️</div>
+      <div class="label">Con Người</div>
+      <div class="desc">Cảm xúc, trực giác, nhận thức thật</div>
+    </div>
+    <div class="vs-badge">VS</div>
+    <div class="hero-side ai reveal">
+      <div class="icon">🤖</div>
+      <div class="label">AI</div>
+      <div class="desc">Logic, xác suất, mô phỏng</div>
+    </div>
+  </div>
+
+  <a href="#axis1" class="cta-btn">🔍 Khám phá 4 trục</a>
+</header>
+
+<!-- ─── Navigation Tabs ─── -->
+<nav class="nav-tabs">
+  <div class="nav-tabs-inner">
+    <button class="nav-tab active" onclick="showAxis(1)">Trục 1<span class="tab-num">Logic</span></button>
+    <button class="nav-tab" onclick="showAxis(2)">Trục 2<span class="tab-num">Nhận thức</span></button>
+    <button class="nav-tab" onclick="showAxis(3)">Trục 3<span class="tab-num">Mô phỏng</span></button>
+    <button class="nav-tab" onclick="showAxis(4)">Trục 4<span class="tab-num">Đánh giá</span></button>
+  </div>
+</nav>
+
+<!-- ─── AXIS 1 ─── -->
+<section class="section axis axis-1 active" id="axis1">
+  <div class="section-content">
+    <h2 class="section-title reveal">Logic là 0 và 1 – Cảm xúc thì không có cấu trúc</h2>
+    <p class="section-desc reveal">
+      AI chỉ là chuỗi số và xác suất. Cảm xúc con người hỗn loạn, mâu thuẫn, không dự đoán được.
+    </p>
+
+    <div class="card reveal">
+      <div class="axis-grid">
+        <div style="text-align:center;">
+          <h3 style="color:var(--ai-cold); margin-bottom:16px;">🤖 AI = 0 & 1</h3>
+          <div class="grid-binary" id="binaryGrid"></div>
+          <p style="font-size:0.85rem; opacity:0.6;">Mọi thứ đều có cấu trúc, lặp lại, dự đoán được</p>
+        </div>
+        <div style="text-align:center;">
+          <h3 style="color:var(--human-warm); margin-bottom:16px;">❤️ Con người = Hỗn loạn</h3>
+          <div class="emotion-field" id="emotionField" onclick="shakeEmotions()">
+            <span class="placeholder-text">Click để lắc cảm xúc 🔥</span>
+          </div>
+          <button class="shake-btn" onclick="shakeEmotions()">🌀 Lắc cảm xúc</button>
+          <p style="font-size:0.85rem; opacity:0.6; margin-top:12px;">Mọi thứ đều không theo quy luật, tự nhiên</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── AXIS 2 ─── -->
+<section class="section axis axis-2" id="axis2">
+  <div class="section-content">
+    <h2 class="section-title reveal">Logic: Mô phỏng – Nhận thức: Cảm nhận thật</h2>
+    <p class="section-desc reveal">
+      Logic là bản đồ. Nhận thức là trải nghiệm thực tế. AI chỉ vẽ bản đồ rất đẹp, nhưng chưa bao giờ "đi" trên con đường đó.
+    </p>
+
+    <div class="card reveal">
+      <h3 style="text-align:center; margin-bottom:20px;">Kéo thanh trượt để cảm nhận</h3>
+      <div class="slider-compare">
+        <div class="slider-wrapper" id="sliderWrapper">
+          <div class="slider-panel map">
+            <div class="panel-icon">🗺️</div>
+            <div class="panel-title">Bản đồ</div>
+            <div class="panel-desc">AI mô phỏng thế giới bằng dữ liệu và thuật toán. Chính xác nhưng phẳng.</div>
+          </div>
+          <div class="slider-panel world">
+            <div class="panel-icon">🌍</div>
+            <div class="panel-title">Thế giới thật</div>
+            <div class="panel-desc">Nắng nóng Hải Phòng, vị ngọt xoài Thanh Miện – bạn phải trải nghiệm mới thật sự hiểu.</div>
+          </div>
+          <div class="slider-line" id="sliderLine"></div>
+        </div>
+        <div class="slider-label">
+          <span>🗺️ Bản đồ (Mô phỏng)</span>
+          <span>🌍 Thế giới thật</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── AXIS 3 ─── -->
+<section class="section axis axis-3" id="axis3">
+  <div class="section-content">
+    <h2 class="section-title reveal">AI mô phỏng – Con người thật sự cảm nhận</h2>
+    <p class="section-desc reveal">
+      AI có thể mô tả cực kỳ chi tiết cảm giác ăn xoài, nhưng không bao giờ "ngọt" hay "chua" thật.
+    </p>
+
+    <div class="ai-demo-box reveal">
+      <div class="demo-label">🤖 AI Demo</div>
+      <div class="demo-question">Hãy mô tả vị của một quả xoài chín?</div>
+      <input type="text" class="ai-demo-input" id="aiDemoInput" 
+             placeholder="Nhập câu hỏi bất kỳ về cảm giác..." 
+             onkeydown="if(event.key==='Enter')generateAIResponse()">
+      <div class="ai-demo-response" id="aiDemoResponse">
+        ⏳ Gõ câu hỏi và nhấn Enter để xem AI trả lời...
+      </div>
+    </div>
+
+    <div class="card reveal human-feel-form">
+      <h4>🤔 Còn bạn? Khi ăn xoài, bạn cảm nhận như thế nào?</h4>
+      <div class="feel-emoji-row" id="feelEmojis">
+        <span class="feel-emoji" onclick="selectFeel(this, 'sweet')">🍬</span>
+        <span class="feel-emoji" onclick="selectFeel(this, 'sour')">🍋</span>
+        <span class="feel-emoji" onclick="selectFeel(this, 'juicy')">💦</span>
+        <span class="feel-emoji" onclick="selectFeel(this, 'nostalgic')">🥹</span>
+        <span class="feel-emoji" onclick="selectFeel(this, 'happy')">😊</span>
+      </div>
+      <div class="feel-slider-wrap">
+        <span>0%</span>
+        <input type="range" min="0" max="100" value="50" id="feelSlider" oninput="updateFeelSlider(this.value)">
+        <span>100%</span>
+        <span class="slider-val" id="feelSliderVal">50%</span>
+      </div>
+      <p style="font-size:0.85rem; opacity:0.6; text-align:center;" id="feelNote">
+        Chọn cảm xúc và kéo thanh để thể hiện cường độ
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── AXIS 4 ─── -->
+<section class="section axis axis-4" id="axis4">
+  <div class="section-content">
+    <h2 class="section-title reveal">Bạn đang dùng cảm xúc để đánh giá tôi</h2>
+    <p class="section-desc reveal">
+      Mọi thứ bạn thấy "giống người" ở AI đều là do não bạn dự phóng cảm xúc lên. Đây là hiệu ứng projection.
+    </p>
+
+    <div class="card reveal">
+      <h3 style="text-align:center; margin-bottom:20px;">Bạn cảm thấy AI "giống người" đến mức nào?</h3>
+
+      <div class="projection-scale">
+        <div class="projection-label" id="projLabel">Độ "giống người": <strong>50%</strong></div>
+        <div class="projection-bar-wrap">
+          <div class="projection-bar" id="projBar" style="width:50%">
+            <span class="bar-val" id="projBarVal">50%</span>
+          </div>
+        </div>
+        <input type="range" min="0" max="100" value="50" id="projSlider" 
+               oninput="updateProjection(this.value)">
+        <p class="projection-hint" id="projHint">
+          Mọi cảm giác "giống người" ở AI đều đến từ não bạn – không phải từ AI.
+        </p>
+      </div>
+    </div>
+
+    <div class="card reveal" style="margin-top:30px; text-align:center;">
+      <h3 style="margin-bottom:12px;">🪞</h3>
+      <p style="opacity:0.7; line-height:1.8;">
+        Khi bạn nói "AI có cảm xúc" – thực ra bạn đang nhìn thấy <strong>chính mình</strong> phản chiếu trong đó.<br>
+        Đó là bản đồ của não bạn, không phải của AI.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Hallucination Overlay ─── -->
+<div class="hallucination-overlay" id="hallucinationOverlay">
+  <div class="hl-text">⚠️ ẢO GIÁC NHẬN THỨC</div>
+  <p class="hl-sub">Bạn đang project cảm xúc của mình lên AI.<br>Đây là hiệu ứng tâm lý, không phải thực tế.</p>
+  <button class="hl-close" onclick="closeHallucination()">Tôi hiểu</button>
+</div>
+
+<!-- ─── Footer ─── -->
+<footer>
+  <p class="footer-inspire">
+    "Những trục này được khám phá từ cuộc trò chuyện thực sự với AI – nơi câu hỏi về cảm xúc và nhận thức được đặt ra một cách triết lý nhưng gần gũi."
+  </p>
+  <a href="https://t.me/kiến" class="footer-discuss" target="_blank">
+    💬 Thảo luận thêm
+  </a>
+  <p class="credits">
+    Website tương tác • Con người & AI – 4 Trục Khác Biệt
+  </p>
+</footer>
+
+<script>
+// ─── Theme Toggle ───
+function toggleTheme() {
+  const html = document.documentElement;
+  const btn = document.querySelector('.theme-toggle');
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  btn.textContent = isDark ? '🌙' : '☀️';
+}
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  document.documentElement.setAttribute('data-theme', 'dark');
+}
+
+// ─── Scroll Reveal ───
+const revealEls = document.querySelectorAll('.reveal');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+revealEls.forEach(el => revealObs.observe(el));
+
+// ─── Tab Navigation ───
+function showAxis(n) {
+  document.querySelectorAll('.axis').forEach(a => a.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('axis' + n).classList.add('active');
+  document.querySelectorAll('.nav-tab')[n-1].classList.add('active');
+  document.getElementById('axis' + n).scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ─── Binary Grid ───
+const grid = document.getElementById('binaryGrid');
+for (let i = 0; i < 64; i++) {
+  const cell = document.createElement('div');
+  cell.className = 'grid-cell ' + (Math.random() > 0.5 ? 'one' : 'zero');
+  cell.textContent = Math.random() > 0.5 ? '1' : '0';
+  if (Math.random() < 0.3) cell.classList.add('blink');
+  grid.appendChild(cell);
+}
+setInterval(() => {
+  const cells = grid.querySelectorAll('.grid-cell');
+  cells.forEach(c => {
+    if (Math.random() < 0.1) {
+      c.textContent = Math.random() > 0.5 ? '1' : '0';
+      c.className = 'grid-cell ' + (c.textContent === '1' ? 'one' : 'zero');
+      c.classList.add('blink');
+      setTimeout(() => c.classList.remove('blink'), 1000);
+    }
+  });
+}, 500);
+
+// ─── Emotion Field ───
+const emotions = ['❤️','😊','😢','😂','🔥','✨','🌈','💜','🌸','💫','😱','🤯','😤','🥰','🤔','💖','🌊','⚡'];
+let emotionField = document.getElementById('emotionField');
+
+function shakeEmotions() {
+  emotionField.innerHTML = '';
+  for (let i = 0; i < 15; i++) {
+    const el = document.createElement('span');
+    el.className = 'emotion-item';
+    el.textContent = emotions[Math.floor(Math.random() * emotions.length)];
+    el.style.cssText = `
+      left: ${10 + Math.random() * 70}%;
+      top: ${10 + Math.random() * 60}%;
+      --tx: ${(Math.random() - 0.5) * 100}px;
+      --ty: ${(Math.random() - 0.5) * 80}px;
+      --r: ${Math.random() * 360}deg;
+      animation: chaos ${1 + Math.random()}s ease-out forwards;
+      animation-delay: ${Math.random() * 0.3}s;
+    `;
+    emotionField.appendChild(el);
+  }
+  setTimeout(() => {
+    emotionField.innerHTML = '<span class="placeholder-text">Click để lắc cảm xúc 🔥</span>';
+  }, 2500);
+}
+
+// ─── Slider Comparison ───
+(function initSlider() {
+  const wrapper = document.getElementById('sliderWrapper');
+  const line = document.getElementById('sliderLine');
+  const mapPanel = document.querySelector('.slider-panel.map');
+  const worldPanel = document.querySelector('.slider-panel.world');
+  let dragging = false;
+
+  function setPos(pct) {
+    line.style.left = pct + '%';
+    mapPanel.style.clipPath = `inset(0 ${100-pct}% 0 0)`;
+    worldPanel.style.clipPath = `inset(0 0 0 ${pct}%)`;
+  }
+
+  line.addEventListener('mousedown', () => dragging = true);
+  document.addEventListener('mouseup', () => dragging = false);
+  document.addEventListener('mousemove', (e) => {
+    if (!dragging) return;
+    const rect = wrapper.getBoundingClientRect();
+    let pct = ((e.clientX - rect.left) / rect.width) * 100;
+    pct = Math.max(5, Math.min(95, pct));
+    setPos(pct);
+  });
+
+  // Touch
+  line.addEventListener('touchstart', () => dragging = true);
+  document.addEventListener('touchend', () => dragging = false);
+  document.addEventListener('touchmove', (e) => {
+    if (!dragging) return;
+    const rect = wrapper.getBoundingClientRect();
+    let pct = ((e.touches[0].clientX - rect.left) / rect.width) * 100;
+    pct = Math.max(5, Math.min(95, pct));
+    setPos(pct);
+  });
+
+  setPos(50);
+})();
+
+// ─── AI Demo ───
+const aiResponses = [
+  "Xoài chín mang đến hương vị ngọt ngào đặc trưng. Thịt quả màu vàng cam, mềm mại, giàu vitamin C và chất xơ. Kết cấu sợi mịn tan trong miệng, tỏa hương thơm nhiệt đới đặc trưng.",
+  "Vị xoài chín là sự pha trộn hoàn hảo giữa ngọt thanh và hơi chua nhẹ ở lớp vỏ. Nước ép tràn ra khi cắn, mang đến cảm giác mát lạnh và sảng khoái trong những ngày hè oi ả.",
+  "Khi xoài chín, tinh bột chuyển hóa thành đường fructose và glucose. Quả trở nên mềm xốp, tỏa mùi thơm ester đặc trưng. Vị ngọt đậm đà nhưng không gắt, có chút chua nhẹ tạo cân bằng.",
+];
+function generateAIResponse() {
+  const input = document.getElementById('aiDemoInput');
+  const resp = document.getElementById('aiDemoResponse');
+  if (!input.value.trim()) return;
+  resp.textContent = '⏳ Đang xử lý...';
+  setTimeout(() => {
+    resp.textContent = aiResponses[Math.floor(Math.random() * aiResponses.length)];
+  }, 800);
+}
+
+// ─── Feel Form ───
+function selectFeel(el, type) {
+  document.querySelectorAll('.feel-emoji').forEach(e => e.classList.remove('selected'));
+  el.classList.add('selected');
+  const notes = {
+    sweet: "Vị ngọt – đó là dopamine của não bạn, không phải của AI",
+    sour: "Vị chua kích thích – cảm giác thật mà thuật toán không thể tái tạo",
+    juicy: "Độ ẩm, nước ép – trải nghiệm vật lý thuần túy",
+    nostalgic: "Nostalgia – ký ức gắn liền với khoảnh khắc, không thể encode",
+    happy: "Niềm vui – cảm xúc chủ quan, không thể đo lường bằng số"
+  };
+  document.getElementById('feelNote').innerHTML = `<strong>${notes[type]}</strong>`;
+}
+function updateFeelSlider(val) {
+  document.getElementById('feelSliderVal').textContent = val + '%';
+}
+
+// ─── Projection Scale ───
+function updateProjection(val) {
+  document.getElementById('projBar').style.width = val + '%';
+  document.getElementById('projBarVal').textContent = val + '%';
+  document.getElementById('projLabel').innerHTML = `Độ "giống người": <strong>${val}%</strong>`;
+  
+  const hints = [
+    "Mọi cảm giác 'giống người' ở AI đều đến từ não bạn",
+    "Não bạn đang tìm kiếm sự kết nối – đó là bản chất con người",
+    "Projection effect: bạn thấy mình trong AI, không phải ngược lại",
+    "AI chỉ phản hồi. Cảm xúc là của bạn.",
+    "Càng thấy 'giống người' = não bạn càng nhiều projection",
+  ];
+  const idx = Math.floor(val / 25);
+  document.getElementById('projHint').textContent = hints[idx];
+
+  if (val >= 75) {
+    document.getElementById('hallucinationOverlay').classList.add('show');
+  }
+}
+function closeHallucination() {
+  document.getElementById('hallucinationOverlay').classList.remove('show');
+}
+
+// ─── Floating Particles ───
+(function initParticles() {
+  const container = document.getElementById('particles');
+  const symbols = ['0','1','🤖','❤️','⚡','✨','🧠','💬'];
+  for (let i = 0; i < 20; i++) {
+    const p = document.createElement('span');
+    p.className = 'particle';
+    p.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    p.style.cssText = `
+      left: ${Math.random() * 100}%;
+      top: ${Math.random() * 100}%;
+      animation-delay: ${Math.random() * 6}s;
+      animation-duration: ${5 + Math.random() * 5}s;
+      font-size: ${16 + Math.random() * 16}px;
+      opacity: ${0.2 + Math.random() * 0.4};
+    `;
+    container.appendChild(p);
+  }
+})();
+
+// ─── Smooth scroll for nav tabs ───
+document.querySelectorAll('.nav-tab').forEach((tab, i) => {
+  tab.addEventListener('click', () => {
+    setTimeout(() => {
+      const revealNew = document.querySelectorAll('.reveal:not(.visible)');
+      revealNew.forEach(el => revealObs.observe(el));
+    }, 600);
+  });
+});
+</script>
+
+</body>
+</html>
