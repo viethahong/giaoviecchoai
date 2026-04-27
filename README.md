@@ -32,6 +32,24 @@ Dành cho chủ SME Việt Nam muốn xây đội ng�nh vận hành với AI m
 
 ---
 
+## ⚡ Quick Start (30 phút)
+
+Nếu bạn mới vào repository này, bắt đầu ở đây:
+
+1. **Đọc** [docs/01-intro/README.md](./docs/01-intro/README.md) — 15 phút
+2. **Làm** [exercises/day-01.md](./exercises/day-01.md) — 10 phút
+3. **Dùng** [templates/4c-template.md](./templates/4c-template.md) để giao 1 task cho AI ngay — 5 phút
+
+### Đọc theo vai trò
+
+| Bạn là | Đọc trước | Đọc tiếp |
+|---|---|---|
+| **Chủ SME mới AI** | 01-intro → 02-matrix | 03-4c → 05-ai-tools |
+| **Quản lý / Team Lead** | 02-matrix → 03-4c | 06-loop-thinking → skills/ |
+| **Nhân viên thực thi** | 03-4c → templates/ | prompts/ → exercises/ |
+
+---
+
 ## Ba giai đoạn đồng hành
 
 ### 1. Trước workshop

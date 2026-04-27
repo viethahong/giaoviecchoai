@@ -125,5 +125,5 @@ Viết tin nhắn mời KOL.
 
 ## Liên quan
 
-- [Skills: Relations](../skills/relations/)
-- [4C Template](../templates/4c-template.md)
+- [Skills: Relations](../../skills/relations/)
+- [4C Template](../../templates/4c-template.md)

@@ -22,7 +22,8 @@ Hỏi trước: "Mình cần output gì?" rồi mới hỏi "AI nào cho output 
 |---|---|---|
 | **Claude** | Viết rõ ràng, logic, dài hạn được | Không realtime |
 | **ChatGPT** | Nhanh, tiện, nhiều plugin | Context ngắn hơn |
-| **Gemini** | Search web tốt, free | Style hơi "máy" |
+| **Gemini 2.0 Flash** | Miễn phí, nhanh, search web | Style hơi "ổn định quá" |
+| **DeepSeek** | Miễn phí, tốt với task logic | Dữ liệu lưu trữ ở TQ |
 
 **Khi nào dùng:** Task lặp lại, cần đúng format, không cần sáng tạo.
 
@@ -33,8 +34,8 @@ Hỏi trước: "Mình cần output gì?" rồi mới hỏi "AI nào cho output 
 | AI | Điểm mạnh | Điểm yếu |
 |---|---|---|
 | **Claude** | Ý tưởng sâu, nuance tốt | Chậm |
-| **ChatGPT (GPT-4)** | Sáng tạo, đa dạng | Có thể "bình thường" |
-| **Perplexity** | Research nhanh cho brainstorm | Không viết content |
+| **ChatGPT (GPT-4o)** | Sáng tạo, đa dạng | Có thể "bình thường" |
+| **Grok (xAI)** | Hiểu xu hướng mạng xã hội, hài hước | Dữ liệu training giới hạn |
 
 **Khi nào dùng:** Khi bạn cần ý tưởng mới, cần góc nhìn khác.
 
@@ -47,6 +48,7 @@ Hỏi trước: "Mình cần output gì?" rồi mới hỏi "AI nào cho output 
 | **Perplexity** | Trích nguồn, realtime | Chiều sâu hạn chế |
 | **Gemini** | Search web tốt, multi-modal | Style hơi bảng tính |
 | **Claude** | Phân tích sâu, suy luận tốt | Cần prompt tốt |
+| **Grok** | Realtime X (Twitter), xu hướng thị trường VN | Cần tài khoản Premium |
 
 **Khi nào dùng:** Khi cần thông tin thị trường, đối thủ, xu hướng.
 
@@ -61,6 +63,22 @@ Hỏi trước: "Mình cần output gì?" rồi mới hỏi "AI nào cho output 
 | **Galileo AI** | Wireframe nhanh | Chỉ wireframe |
 
 **Khi nào dùng:** Khi cần prototype nhanh, không có designer.
+
+---
+
+## Context Window — Giới Hạn Cần Biết (2025)
+
+| Model | Context Window | Ghi chú |
+|---|---|---|
+| Claude 3.7 Sonnet | 200K tokens | Tốt cho tài liệu dài |
+| GPT-4o | 128K tokens | Phổ biến nhất |
+| Gemini 2.0 Flash | 1M tokens | Nhanh, phù hợp file lớn |
+| DeepSeek | 128K tokens | Miễn phí, tốt cho task logic |
+
+**Khi prompt + output vượt context window:**
+- AI sẽ "quên" phần đầu
+- Chia nhỏ thành nhiều prompt
+- Dùng "context summarizing" sau mỗi 10 trao đổi dài
 
 ---
 
@@ -101,6 +119,12 @@ Chọn 3 task từ ma trận của bạn. Với mỗi task, xác định:
 1. Nhóm task (vận hành / sáng tạo / nghiên cứu / thiết kế)
 2. AI bạn sẽ dùng và tại sao
 3. Output mỗi AI từ cùng 1 prompt đơn giản
+
+---
+
+## Bài Tập
+
+[Liên quan: exercises/day-05.md](../../exercises/day-05.md)
 
 ---
 

@@ -59,7 +59,7 @@ Criteria có vai trò kép:
 
 ## Template 4C
 
-[Tải 4c-template.md](../templates/4c-template.md)
+[Tải 4c-template.md](../../templates/4c-template.md)
 
 ---
 
@@ -82,14 +82,14 @@ Criteria có vai trò kép:
 - Điểm bán: tiết kiệm thời gian cho người bận
 
 **Criteria:**
-- Phải có: hook gâi tò mò, mô tả vải linen, giá, CTA mua hàng
-- Không được: dùng từ "sang trọng/b upscale", so sánh với đối thủ
+- Phải có: hook gây tò mò, mô tả vải linen, giá, CTA mua hàng
+- Không được: dùng từ "sang trọng/upscale", so sánh với đối thủ
 
 ---
 
 ## Bài Tập
 
-[Liên quan: exercises/day-03.md](./exercises/day-03.md)
+[Liên quan: exercises/day-03.md](../../exercises/day-03.md)
 
 ---
 

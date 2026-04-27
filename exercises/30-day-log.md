@@ -43,7 +43,7 @@ Template theo dõi 30 ngày sau workshop. Mỗi ngày làm 1 task nhỏ và ghi 
 | 14 | | Ý tưởng email sequence | | /10 | | |
 | 15 | | Lên outline bài blog | | /10 | | |
 | 16 | | Brainstorm tên sản phẩm mới | | /10 | | |
-| 17 | | Ý tưởng promtion | | /10 | | |
+| 17 | | Ý tưởng promotion | | /10 | | |
 | 18 | | Concept event nhỏ | | /10 | | |
 | 19 | | Lên kịch bản webinar | | /10 | | |
 | 20 | | Ý tưởng partnership | | /10 | | |

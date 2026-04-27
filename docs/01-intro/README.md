@@ -79,7 +79,7 @@ Muốn *cảm nhận* sự khác biệt Logic × Cảm xúc thay vì chỉ đọ
 
 ## Bài tập
 
-[Liên quan: exercises/day-01.md](./exercises/day-01.md)
+[Liên quan: exercises/day-01.md](../../exercises/day-01.md)
 
 ---
 

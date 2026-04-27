@@ -124,10 +124,10 @@ Plan để áp dụng tư duy vòng lặp sau workshop:
 - Task 11-20: Sáng tạo (dùng AI brainstorm)
 - Task 21-30: Chiến lược (dùng AI phân tích)
 
-[Xem chi tiết: exercises/30-day-log.md](./exercises/30-day-log.md)
+[Xem chi tiết: exercises/30-day-log.md](../../exercises/30-day-log.md)
 
 ---
 
 ## Tiếp theo
 
-[Sau khi hiểu tư duy vòng lặp → Làm bài tập: exercises/day-04.md](../exercises/day-04.md)
+[Sau khi hiểu tư duy vòng lặp → Làm bài tập: exercises/day-06.md](../../exercises/day-06.md)

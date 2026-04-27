@@ -2,8 +2,6 @@
 
 Những prompt mẫu cho các task sáng tạo content. Lưu ý: phần cảm xúc nên tự viết lại.
 
-Những prompt mẫu cho các task sáng tạo. Lưu ý: phần cảm xúc nên tự viết lại.
-
 ---
 
 ## Mục lục
@@ -160,5 +158,5 @@ Lead magnet (nếu có): [lead magnet]
 
 ## Liên quan
 
-- [Skills: Content Creation](../skills/content-creation/)
-- [Template 4C](../templates/4c-template.md)
+- [Skills: Content Creation](../../skills/content-creation/)
+- [Template 4C](../../templates/4c-template.md)

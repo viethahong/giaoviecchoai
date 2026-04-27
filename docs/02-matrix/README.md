@@ -63,13 +63,13 @@ Với mỗi ô có đầu việc, hỏi:
 
 ## Template
 
-[Tải matrix-template.xlsx](../templates/matrix-template.xlsx)
+[Tải matrix-template.md](../../templates/matrix-template.md)
 
 ---
 
 ## Bài tập
 
-[Liên quan: exercises/day-02.md](./exercises/day-02.md)
+[Liên quan: exercises/day-02.md](../../exercises/day-02.md)
 
 ---
 

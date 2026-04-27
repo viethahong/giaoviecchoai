@@ -167,5 +167,5 @@ Criteria:
 
 ## Liên quan
 
-- [4C Template](../templates/4c-template.md)
-- [Bài 03 — 4C Framework](../README.md)
+- [4C Template](../../templates/4c-template.md)
+- [Bài 03 — 4C Framework](./README.md)

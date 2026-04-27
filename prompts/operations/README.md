@@ -2,7 +2,6 @@
 
 Những prompt mẫu cho các task vận hành. Dùng làm base và customize theo nhu cầu.
 
-Những prompt mẫu cho các task vận hành. Dùng làm base và customize theo nhu cầu.
 
 ---
 
@@ -121,7 +120,7 @@ Kênh bán: [IG/TikTok Shop]
 
 # Criteria:
 - Phải có: tên sp, giá, USP, CTA
-- Không được: so sánh với đối thủ, "sang trọng/b upscale"
+- Không được: so sánh với đối thủ, "sang trọng/upscale"
 - Dấu hiệu tốt: khách hỏi mua sau khi đọc
 ```
 
@@ -207,5 +206,5 @@ Viết SOP chi tiết.
 
 ## Liên quan
 
-- [Skills: Operations](../skills/operations/)
-- [Template 4C](../templates/4c-template.md)
+- [Skills: Operations](../../skills/operations/)
+- [Template 4C](../../templates/4c-template.md)

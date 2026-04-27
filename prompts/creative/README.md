@@ -1,162 +1,143 @@
-# Prompt Library: Creative
+# Prompt Library: Creative — Sáng Tạo & Ý Tưởng
 
-Những prompt mẫu cho các task sáng tạo. Lưu ý: phần cảm xúc nên tự viết lại.
+Prompt mẫu cho các task sáng tạo: brainstorm, concept, đặt tên. Dùng AI để tạo nhiều lựa chọn, bạn tự chọn và tinh chỉnh.
+
+> **Lưu ý:** Với task sáng tạo, chạy prompt 2-3 lần và lấy phần tốt từ mỗi output.
 
 ---
 
 ## Mục lục
 
-- [Brainstorm ý tưởng](#brainstorm-ý-tưởng)
-- [Concept chiến dịch](#concept-chiến-dịch)
-- [Outline bài blog](#outline-bài-blog)
-- [Script video ngắn](#script-video-ngắn)
-- [Email sequence](#email-sequence)
+- [Brainstorm tên sản phẩm / dịch vụ](#brainstorm-tên-sản-phẩm--dịch-vụ)
+- [Concept chiến dịch marketing](#concept-chiến-dịch-marketing)
+- [Ý tưởng content series](#ý-tưởng-content-series)
+- [Hook và tagline](#hook-và-tagline)
 
 ---
 
-## Brainstorm ý tưởng
+## Brainstorm tên sản phẩm / dịch vụ
 
-Dùng cho: khi cần nhiều ý tưởng để chọn.
+Dùng cho: đặt tên brand, sản phẩm mới, dịch vụ, tính năng.
 
 ```markdown
 # Context:
-Brand [tên], ngành [ngành], target [mô tả KH].
-Đang làm [mục đích cụ thể].
+Công ty [tên], ngành [ngành].
+Sản phẩm/dịch vụ: [mô tả ngắn].
+Target: [khách hàng mục tiêu].
+Vibe của brand: [ví dụ: chuyên nghiệp / trẻ trung / tối giản].
 
 # Commission:
-Brainstorm [số] ý tưởng cho [chủ đề].
-- Mỗi ý tưởng: 1-2 câu mô tả
-- Đa dạng, không trùng lặp
+Brainstorm 15 tên cho [sản phẩm/dịch vụ].
+- Nhóm 1 (5 tên): ngắn gọn, dễ nhớ (1-2 âm tiết)
+- Nhóm 2 (5 tên): mô tả chức năng rõ ràng
+- Nhóm 3 (5 tên): tên sáng tạo, có câu chuyện
 
 # Content:
-Theme/chủ đề: [theme nếu có]
-Ràng buộc: [budget, timeline, kênh...]
+USP: [điểm khác biệt chính]
+Từ khóa liên quan: [list từ khóa]
+Tên cần tránh trùng: [đối thủ]
 
 # Criteria:
-- Phải có: ý tưởng cụ thể chứ không abstract, phù hợp với target
-- Không được: ý tưởng generic, không khả thi với budget
-- Dấu hiệu tốt: có 2-3 ý tưởng muốn test ngay
+- Phải có: dễ đọc tiếng Việt, không trùng trademark phổ biến
+- Không được: tên quá generic, tên có âm tiêu cực trong tiếng Việt
+- Dấu hiệu tốt: đọc lên tự nhiên, dễ viết domain/username
 ```
 
 ---
 
-## Concept chiến dịch
+## Concept chiến dịch marketing
 
-Dùng cho: lên concept cho chiến dịch marketing.
-
-```markdown
-# Context:
-Brand [tên], ngành [ngành], budget [budget].
-Target: [mô tả KH].
-Campaign: [tên/mục đích].
-
-# Commission:
-Viết concept chiến dịch gồm:
-- Big idea: 1 câu tóm tắt
-- Key message: 1-2 câu
-- Main visual direction: mô tả
-- Channels: [list kênh]
-- Timeline: [ngày]
-
-# Content:
-Sản phẩm chính: [sản phẩm]
-USP: [USP]
-Competitors: [đối thủ chính]
-
-# Criteria:
-- Phải có: big idea rõ ràng, khác biệt với competitors, khả thi với budget
-- Không được: concept generic, copy competitors
-- Dấu hiệu tốt: team excited khi đọc concept
-```
-
----
-
-## Outline bài blog
-
-Dùng cho: lên outline trước khi viết bài blog.
-
-```markdown
-# Context:
-Website [tên], ngành [ngành], target [mô tả KH].
-Bài blog: [chủ đề].
-
-# Commission:
-Viết outline chi tiết cho bài blog.
-- Format: title + intro + [số] sections + conclusion
-- SEO-friendly
-
-# Content:
-Topic: [chủ đề]
-Keywords: [keywords chính]
-Target audience: [mô tả]
-Word count target: [số từ]
-
-# Criteria:
-- Phải có: title hấp dẫn, mỗi section có key point, có CTA cuối bài
-- Không được: outline quá ngắn (<5 sections), không SEO-friendly
-- Dấu hiệu tốt: viết xong bài theo outline mạch lạc
-```
-
----
-
-## Script video ngắn
-
-Dùng cho: viết script video 30-60 giây.
-
-```markdown
-# Context:
-Channel [tên], target [mô tả KH].
-Video: [mục đích — bán hàng, educate, entertain].
-
-# Commission:
-Viết script video [số] giây.
-- Format: scene + narration + visuals
-- Hook 3 giây đầu
-- CTA cuối
-
-# Content:
-Topic: [chủ đề]
-Key message: [message chính]
-Product: [sản phẩm]
-
-# Criteria:
-- Phải có: hook gâi tò mò, key message rõ, CTA rõ
-- Không được: quá nhiều thông tin, không hook, không CTA
-- Dấu hiệu tốt: khách xem xong nhớ key message
-```
-
----
-
-## Email sequence
-
-Dùng cho: lên chuỗi email tự động.
+Dùng cho: lên concept cho chiến dịch, ra mắt sản phẩm, sự kiện.
 
 ```markdown
 # Context:
 Brand [tên], ngành [ngành].
-Email sequence: [mục đích — welcome, abandoned cart, nurture...]
+Campaign: [tên / mục đích].
+Target: [mô tả khách hàng mục tiêu].
+Timeline: [ngày bắt đầu – kết thúc].
+Budget range: [khoảng budget].
 
 # Commission:
-Viết [số] email trong sequence.
-- Email 1: [mục đích]
-- Email 2: [mục đích]
-...
-- Mỗi email: subject + body
+Viết 3 concept chiến dịch khác nhau, mỗi concept gồm:
+- Big idea: 1 câu
+- Key message: 1-2 câu
+- Visual direction: mô tả 2-3 câu
+- Kênh triển khai chính: [list]
+- KPI đề xuất: 2-3 chỉ số
 
 # Content:
-Target: [mô tả KH]
-Trigger: [điều kiện trigger]
-Lead magnet (nếu có): [lead magnet]
+Sản phẩm/dịch vụ: [mô tả]
+USP: [điểm khác biệt]
+Đối thủ gần nhất: [tên]
+Tone of voice mong muốn: [ví dụ: vui vẻ / truyền cảm hứng / thực dụng]
 
 # Criteria:
-- Phải có: mỗi email có 1 mục đích rõ, có CTA, không spam
-- Không được: email quá dài, nhiều CTA, vi phạm GDPR/luật marketing
-- Dấu hiệu tốt: open rate cao, click rate >2%
+- Phải có: big idea khác biệt với đối thủ, khả thi với budget
+- Không được: copy concept của brand khác, hứa hẹn không đúng sự thật
+- Dấu hiệu tốt: team excited và muốn làm ngay khi đọc concept
+```
+
+---
+
+## Ý tưởng content series
+
+Dùng cho: lên kế hoạch content tháng, series bài đăng, lịch content.
+
+```markdown
+# Context:
+Brand [tên], kênh [Instagram/TikTok/Facebook/...].
+Đối tượng: [mô tả].
+Tháng [tháng], theme tháng: [nếu có].
+
+# Commission:
+Tạo 12 ý tưởng bài đăng cho tháng này.
+- Phân bổ: [số] bài educate, [số] bài entertain, [số] bài convert
+- Mỗi ý tưởng: hook + format (reels/carousel/single) + angle
+
+# Content:
+Sản phẩm/dịch vụ chính tháng này: [sản phẩm]
+Sự kiện/ngày đặc biệt trong tháng: [list]
+Top-performing content tháng trước: [nếu có]
+
+# Criteria:
+- Phải có: đa dạng format, có bài hook mạnh ở đầu tháng
+- Không được: quá nhiều bài bán hàng trực tiếp (max 3/12)
+- Dấu hiệu tốt: nhìn vào list và muốn làm ngay ít nhất 5 bài
+```
+
+---
+
+## Hook và tagline
+
+Dùng cho: viết hook cho caption, tagline cho chiến dịch, câu mở đầu.
+
+```markdown
+# Context:
+Brand [tên].
+Mục đích hook: [caption / quảng cáo / email subject / tagline].
+Target: [mô tả người đọc].
+
+# Commission:
+Viết 10 hook/tagline cho [chủ đề].
+- Nhóm 1 (4 hook): dựa trên pain point
+- Nhóm 2 (3 hook): dựa trên curiosity gap
+- Nhóm 3 (3 hook): dựa trên social proof
+
+# Content:
+Pain point chính: [pain point của target]
+Benefit chính: [lợi ích của sản phẩm/bài viết]
+Tone: [mạnh / nhẹ nhàng / hài hước]
+
+# Criteria:
+- Phải có: dưới 15 chữ, đọc xong muốn biết thêm
+- Không được: clickbait sai sự thật, dùng CAPSLOCK quá nhiều
+- Dấu hiệu tốt: đọc xong tự hỏi "cái này có nghĩa gì?"
 ```
 
 ---
 
 ## Liên quan
 
-- [Skills: Content Creation](../skills/content-creation/)
-- [4C Template](../templates/4c-template.md)
+- [Skills: Content Creation](../../skills/content-creation/)
+- [Prompts: Content](../content/)
+- [Template 4C](../../templates/4c-template.md)

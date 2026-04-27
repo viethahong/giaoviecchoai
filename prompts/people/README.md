@@ -1,8 +1,7 @@
 # Prompt Library: People
 
-Những prompt mẫu cho các task liên quan đến quan hệ với người. Lưu ý: AI chỉ hỗ trợ phần logic, phần cảm xúc nên tự viết.
+Những prompt mẫu cho các task liên quan đến nhân sự và đội nhóm. Lưu ý: AI chỉ hỗ trợ phần logic, phần cảm xúc nên tự viết.
 
-Những prompt mẫu cho các task liên quan đến quan hệ. Lưu ý: AI chỉ hỗ trợ phần logic, phần cảm xúc nên tự viết.
 
 ---
 
@@ -127,5 +126,5 @@ Viết tin nhắn mời KOL.
 
 ## Liên quan
 
-- [Skills: Relations](../skills/relations/)
-- [Template 4C](../templates/4c-template.md)
+- [Skills: Relations](../../skills/relations/)
+- [Template 4C](../../templates/4c-template.md)

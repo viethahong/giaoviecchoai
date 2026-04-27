@@ -2,7 +2,6 @@
 
 Những prompt mẫu cho các task chiến lược. Lưu ý: AI chỉ phân tích, bạn quyết định.
 
-Những prompt mẫu cho các task chiến lược. Lưu ý: AI chỉ phân tích, bạn quyết định.
 
 ---
 
@@ -163,5 +162,5 @@ Companies to include: [list]
 
 ## Liên quan
 
-- [Skills: Strategy](../skills/strategy/)
-- [Template 4C](../templates/4c-template.md)
+- [Skills: Strategy](../../skills/strategy/)
+- [Template 4C](../../templates/4c-template.md)
